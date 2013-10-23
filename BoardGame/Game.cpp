@@ -544,15 +544,7 @@ void Game::CheckBoard(int posX, int posY)
                 {
                     swapTile.tint = false;
                     baseTile.tint = false;
-                    
-                    DestroyTiles();
-                    
-                    //if swap tile can break tiles, we break them
-                    if (!CheckDestroy(swapTile))
-                    {
-                        DestroyTiles();
-                    }
-                    
+
                     SearchTileCombination();
                     
                     //redraw board
@@ -689,7 +681,9 @@ void Game::DestroyTiles()
             
             if (row < 0)
             {
-                TYPE_SQUARE type = CheckForDifferentType(dTile.type);
+                //generate different tile types
+                Tile diffTile = board[row + 2][col];
+                TYPE_SQUARE type = CheckForDifferentType(diffTile.type);
                 
                 oldTile.value = (int)type;
                 oldTile.type = type;
@@ -715,7 +709,6 @@ void Game::DestroyTiles()
 
         printf("size: %ld\n", hCheck.size());
 
-        //done!
         for (Tile dTile : hCheck)
         {
             int col = dTile.colValue;
@@ -730,9 +723,10 @@ void Game::DestroyTiles()
                     newTile.rowValue = 0;
                     newTile.colValue = col;
                     
-                    Tile tile = board[1][col];
+                    Tile tile = board[0][col - 1];
                     
                     TYPE_SQUARE type = CheckForDifferentType(tile.type);
+                    
                     newTile.value = (int)type;
                     newTile.type = type;
                     newTile.tint = false;
@@ -806,7 +800,7 @@ TYPE_SQUARE Game::CheckForDifferentType(TYPE_SQUARE oldType)
  */
 TYPE_SQUARE Game::GetNewRandomType()
 {
-    int type = rand() % kMaxTile;
+    int type = 0 + (rand() % kMaxTile);
     
     return (TYPE_SQUARE)type;
 }
