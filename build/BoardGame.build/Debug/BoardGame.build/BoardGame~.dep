@@ -1,0 +1,16 @@
+ffffffffffffffffffffffffffffffff acd0fe43bf6648602bf02d24ca30a92a ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app
+000000004c88294e00000000000007b3 c988f038b9db9faa9cc85a87d5298672 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Yellow.png
+000000004c88295e0000000000000bcc 166d4db39df0847cee13123ba9906aba ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Red.png
+000000005135e0980000000000000c67 eb23e368032e1d2798d9d80d478f6108 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Purple.png
+000000005087d7f10000000000042a7c f27919e8336f4cb6771c8d3a85b7b38a ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/arial.ttf
+000000005135e0980000000000000c33 89feb5d4edf6bbf5a059c7b4c53d3198 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Green.png
+000000005135e0980000000000000d09 f644b2afdcc0f41d8ef9f1427bdd1e3d ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Blue.png
+000000005135e0980000000000014254 0ad9cab0df6ed6b862e64e86e1f68c7d ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/BackGround.jpg
+0000000052067b8900000000000000ee 16a9b654983261f89deebf5cccfb2207 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_ttf.framework
+000000005253e04d00000000000000ee 6e4849e1d97a47cc7ab2d69f36ba8af7 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2.framework
+0000000052067b1c00000000000000ee 7b18fbcdc275d987ff43690e170640e4 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_mixer.framework
+0000000052067ac600000000000000ee cf13e9d7cfc372b8dfcf2e9296b28ef9 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_image.framework
+ffffffffffffffffffffffffffffffff b8ccabbfd15dd12ed4b2156b531a19a8 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/MacOS/BoardGame
+00000000525a60130000000000006e76 5555f2b5a1c8a0e23c076db045887422 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.o
+000000005256c7780000000000000a0f 3b33270f1a27e414b953a82803969890 ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.o
+0000000000002ba00000000000001ff1 f1efa0b09f014215e8e56746434ca8ae ffffffffffffffffffffffffffffffff 0 /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.o

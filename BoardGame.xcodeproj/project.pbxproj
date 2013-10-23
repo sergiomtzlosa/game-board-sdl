@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F6752C118051F5B00ED5444 /* arial.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA808611804D06D00275089 /* arial.ttf */; };
+		1F9C12BE1806C7BE00188FB0 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */; };
+		1F9C12BF1806C7BE00188FB0 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C12BB1806C7BE00188FB0 /* SDL2_mixer.framework */; };
+		1F9C12C01806C7BE00188FB0 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C12BC1806C7BE00188FB0 /* SDL2_ttf.framework */; };
+		1F9C12C11806C7BE00188FB0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C12BD1806C7BE00188FB0 /* SDL2.framework */; };
+		1F9C12C41806D13500188FB0 /* Tint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C12C21806D13500188FB0 /* Tint.cpp */; };
+		1F9C12C91806EE4200188FB0 /* SDL2_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */; };
+		1F9C12CA1806EE4200188FB0 /* SDL2_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9C12BB1806C7BE00188FB0 /* SDL2_mixer.framework */; };
+		1F9C12CB1806EE4200188FB0 /* SDL2_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9C12BC1806C7BE00188FB0 /* SDL2_ttf.framework */; };
+		1F9C12CC1806EE4200188FB0 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9C12BD1806C7BE00188FB0 /* SDL2.framework */; };
+		1FB438CA18045EBE009A354D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FB438C918045EBE009A354D /* main.cpp */; };
+		1FB438FC18045F56009A354D /* BackGround.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FB438F318045F38009A354D /* BackGround.jpg */; };
+		1FB438FE18045F56009A354D /* Blue.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FB438F518045F38009A354D /* Blue.png */; };
+		1FB438FF18045F56009A354D /* Green.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FB438F718045F38009A354D /* Green.png */; };
+		1FB4390018045F56009A354D /* Purple.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FB438F818045F38009A354D /* Purple.png */; };
+		1FB4390118045F56009A354D /* Red.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FB438F918045F38009A354D /* Red.png */; };
+		1FB4390218045F56009A354D /* Yellow.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FB438FA18045F38009A354D /* Yellow.png */; };
+		1FDE9C151804A5C600EBF4F5 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FDE9C131804A5C600EBF4F5 /* Game.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1FB438C418045EBE009A354D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		1FB438EB18045EFF009A354D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1F9C12C91806EE4200188FB0 /* SDL2_image.framework in CopyFiles */,
+				1F9C12CA1806EE4200188FB0 /* SDL2_mixer.framework in CopyFiles */,
+				1F9C12CB1806EE4200188FB0 /* SDL2_ttf.framework in CopyFiles */,
+				1F9C12CC1806EE4200188FB0 /* SDL2.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FB438F218045F24009A354D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				1FB438FC18045F56009A354D /* BackGround.jpg in CopyFiles */,
+				1F6752C118051F5B00ED5444 /* arial.ttf in CopyFiles */,
+				1FB438FE18045F56009A354D /* Blue.png in CopyFiles */,
+				1FB438FF18045F56009A354D /* Green.png in CopyFiles */,
+				1FB4390018045F56009A354D /* Purple.png in CopyFiles */,
+				1FB4390118045F56009A354D /* Red.png in CopyFiles */,
+				1FB4390218045F56009A354D /* Yellow.png in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../Frameworls/SDL2_image.framework; sourceTree = "<group>"; };
+		1F9C12BB1806C7BE00188FB0 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../Frameworls/SDL2_mixer.framework; sourceTree = "<group>"; };
+		1F9C12BC1806C7BE00188FB0 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../Frameworls/SDL2_ttf.framework; sourceTree = "<group>"; };
+		1F9C12BD1806C7BE00188FB0 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../Frameworls/SDL2.framework; sourceTree = "<group>"; };
+		1F9C12C21806D13500188FB0 /* Tint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tint.cpp; sourceTree = "<group>"; };
+		1F9C12C31806D13500188FB0 /* Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tint.h; sourceTree = "<group>"; };
+		1FA808611804D06D00275089 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
+		1FB438C618045EBE009A354D /* BoardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FB438C918045EBE009A354D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1FB438F318045F38009A354D /* BackGround.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackGround.jpg; sourceTree = "<group>"; };
+		1FB438F518045F38009A354D /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		1FB438F718045F38009A354D /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
+		1FB438F818045F38009A354D /* Purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Purple.png; sourceTree = "<group>"; };
+		1FB438F918045F38009A354D /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
+		1FB438FA18045F38009A354D /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
+		1FDE9C131804A5C600EBF4F5 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		1FDE9C141804A5C600EBF4F5 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FB438C318045EBE009A354D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F9C12BE1806C7BE00188FB0 /* SDL2_image.framework in Frameworks */,
+				1F9C12BF1806C7BE00188FB0 /* SDL2_mixer.framework in Frameworks */,
+				1F9C12C01806C7BE00188FB0 /* SDL2_ttf.framework in Frameworks */,
+				1F9C12C11806C7BE00188FB0 /* SDL2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FA808651804D1F600275089 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1FA808611804D06D00275089 /* arial.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		1FB438BD18045EBE009A354D = {
+			isa = PBXGroup;
+			children = (
+				1FB438C818045EBE009A354D /* BoardGame */,
+				1FB438C718045EBE009A354D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FB438C718045EBE009A354D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FB438C618045EBE009A354D /* BoardGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FB438C818045EBE009A354D /* BoardGame */ = {
+			isa = PBXGroup;
+			children = (
+				1FA808651804D1F600275089 /* Fonts */,
+				1FB438FB18045F3E009A354D /* Images */,
+				1FB438F118045F19009A354D /* Code */,
+				1FB438F018045F0C009A354D /* Frameworks */,
+			);
+			path = BoardGame;
+			sourceTree = "<group>";
+		};
+		1FB438F018045F0C009A354D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */,
+				1F9C12BB1806C7BE00188FB0 /* SDL2_mixer.framework */,
+				1F9C12BC1806C7BE00188FB0 /* SDL2_ttf.framework */,
+				1F9C12BD1806C7BE00188FB0 /* SDL2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FB438F118045F19009A354D /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				1FB438C918045EBE009A354D /* main.cpp */,
+				1FDE9C131804A5C600EBF4F5 /* Game.cpp */,
+				1FDE9C141804A5C600EBF4F5 /* Game.h */,
+				1F9C12C21806D13500188FB0 /* Tint.cpp */,
+				1F9C12C31806D13500188FB0 /* Tint.h */,
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		1FB438FB18045F3E009A354D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1FB438F318045F38009A354D /* BackGround.jpg */,
+				1FB438F518045F38009A354D /* Blue.png */,
+				1FB438F718045F38009A354D /* Green.png */,
+				1FB438F818045F38009A354D /* Purple.png */,
+				1FB438F918045F38009A354D /* Red.png */,
+				1FB438FA18045F38009A354D /* Yellow.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FB438C518045EBE009A354D /* BoardGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FB438CD18045EBE009A354D /* Build configuration list for PBXNativeTarget "BoardGame" */;
+			buildPhases = (
+				1FB438C218045EBE009A354D /* Sources */,
+				1FB438C318045EBE009A354D /* Frameworks */,
+				1FB438C418045EBE009A354D /* CopyFiles */,
+				1FB438EB18045EFF009A354D /* CopyFiles */,
+				1FB438F218045F24009A354D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BoardGame;
+			productName = BoardGame;
+			productReference = 1FB438C618045EBE009A354D /* BoardGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FB438BE18045EBE009A354D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Sergio;
+			};
+			buildConfigurationList = 1FB438C118045EBE009A354D /* Build configuration list for PBXProject "BoardGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1FB438BD18045EBE009A354D;
+			productRefGroup = 1FB438C718045EBE009A354D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FB438C518045EBE009A354D /* BoardGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FB438C218045EBE009A354D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB438CA18045EBE009A354D /* main.cpp in Sources */,
+				1FDE9C151804A5C600EBF4F5 /* Game.cpp in Sources */,
+				1F9C12C41806D13500188FB0 /* Tint.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1FB438CB18045EBE009A354D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1FB438CC18045EBE009A354D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1FB438CE18045EBE009A354D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworls\"";
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/usr/include,
+					/usr/local/include,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/opt/local/lib,
+					/usr/lib,
+					"\"$(SRCROOT)/BoardGame\"",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					cocoa,
+					"-framework",
+					SDL2,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1FB438CF18045EBE009A354D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworls\"";
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/usr/include,
+					/usr/local/include,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/opt/local/lib,
+					/usr/lib,
+					"\"$(SRCROOT)/BoardGame\"",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					cocoa,
+					"-framework",
+					SDL2,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FB438C118045EBE009A354D /* Build configuration list for PBXProject "BoardGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FB438CB18045EBE009A354D /* Debug */,
+				1FB438CC18045EBE009A354D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FB438CD18045EBE009A354D /* Build configuration list for PBXNativeTarget "BoardGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FB438CE18045EBE009A354D /* Debug */,
+				1FB438CF18045EBE009A354D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FB438BE18045EBE009A354D /* Project object */;
+}

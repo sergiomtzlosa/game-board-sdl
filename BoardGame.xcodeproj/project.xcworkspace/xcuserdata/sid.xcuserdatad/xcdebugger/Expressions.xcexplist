@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Game::CheckDestroy(Tile):Game.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "board[row][col].type">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Game::TrackEvent(SDL_Event*):Game.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
