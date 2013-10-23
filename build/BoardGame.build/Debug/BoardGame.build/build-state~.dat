@@ -1,366 +1,0 @@
-TBoardGame
-v5
-r1
-cCheck dependencies
-cCompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.o /Users/sid/Desktop/SDL/BoardGame/BoardGame/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.o /Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.o /Users/sid/Desktop/SDL/BoardGame/BoardGame/Tint.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/MacOS/BoardGame normal x86_64
-cPBXCp BoardGame/../Frameworls/SDL2_image.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_image.framework
-cPBXCp BoardGame/../Frameworls/SDL2_mixer.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_mixer.framework
-cPBXCp BoardGame/../Frameworls/SDL2_ttf.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_ttf.framework
-cPBXCp BoardGame/../Frameworls/SDL2.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2.framework
-cPBXCp BoardGame/BackGround.jpg build/Debug/BoardGame.app/Contents/Resources/BackGround.jpg
-cPBXCp BoardGame/arial.ttf build/Debug/BoardGame.app/Contents/Resources/arial.ttf
-cPBXCp BoardGame/Blue.png build/Debug/BoardGame.app/Contents/Resources/Blue.png
-cPBXCp BoardGame/Green.png build/Debug/BoardGame.app/Contents/Resources/Green.png
-cPBXCp BoardGame/Purple.png build/Debug/BoardGame.app/Contents/Resources/Purple.png
-cPBXCp BoardGame/Red.png build/Debug/BoardGame.app/Contents/Resources/Red.png
-cPBXCp BoardGame/Yellow.png build/Debug/BoardGame.app/Contents/Resources/Yellow.png
-cTouch /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
-c000000005130312F00000000000000AA
-t1362112815
-s170
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2.framework
-c000000005253E04D00000000000000EE
-t1381228621
-s238
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2.framework/SDL2
-c000000005253E0480000000000181710
-t1381228616
-s1578768
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_image.framework
-c0000000052067AC600000000000000EE
-t1376156358
-s238
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_image.framework/SDL2_image
-c0000000052067AC60000000000028E40
-t1376156358
-s167488
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_mixer.framework
-c0000000052067B1C00000000000000EE
-t1376156444
-s238
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_mixer.framework/SDL2_mixer
-c0000000052067B1C000000000004DE00
-t1376156444
-s318976
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_ttf.framework
-c0000000052067B8900000000000000EE
-t1376156553
-s238
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_ttf.framework/SDL2_ttf
-c0000000052067B890000000000013430
-t1376156553
-s78896
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/BackGround.jpg
-c000000005135E0980000000000014254
-t1362485400
-s82516
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/Blue.png
-c000000005135E0980000000000000D09
-t1362485400
-s3337
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.cpp
-c00000000525A60130000000000006E76
-t1381654547
-s28278
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.h
-c00000000525A5F5A0000000000000F5D
-t1381654362
-s3933
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/Green.png
-c000000005135E0980000000000000C33
-t1362485400
-s3123
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/Purple.png
-c000000005135E0980000000000000C67
-t1362485400
-s3175
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/Red.png
-c000000004C88295E0000000000000BCC
-t1283991902
-s3020
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/Tint.cpp
-c000000005256C7780000000000000A0F
-t1381418872
-s2575
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/Yellow.png
-c000000004C88294E00000000000007B3
-t1283991886
-s1971
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/arial.ttf
-c000000005087D7F10000000000042A7C
-t1351079921
-s273020
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/libSDL2_image.a
-c00000000525C21960000000000A8870C
-t1381769622
-s11044620
-
-N/Users/sid/Desktop/SDL/BoardGame/BoardGame/main.cpp
-c00000000525A74FA00000000000010AC
-t1381659898
-s4268
-i"Game.h"
-
-N/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/BoardGame.LinkFileList
-c00000000525C21A6000000000000013E
-t1381769638
-s318
-
-N/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.o
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.o
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.o
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2.framework
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_image.framework
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_mixer.framework
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_ttf.framework
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/MacOS/BoardGame
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/BackGround.jpg
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Blue.png
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Green.png
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Purple.png
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Red.png
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Yellow.png
-t2
-s0
-
-N/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/arial.ttf
-t2
-s0
-
-CBuild AST from /Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.cpp
-r0
-
-CBuild AST from /Users/sid/Desktop/SDL/BoardGame/BoardGame/Tint.cpp
-r0
-
-CBuild AST from /Users/sid/Desktop/SDL/BoardGame/BoardGame/main.cpp
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies8fc24126590cb841^6c215426590cb841^---0#1#0#--18"Check dependencies36"3C66970B-2272-4A99-8C18-64DF75E58324-
-
-CCompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.o /Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s403462438.332754
-e403462439.568906
-r1
-xCompileC
-xbuild/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.o
-x/Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Compile /Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.cpp55505526590cb841^f0a49127590cb841^---0#0#0#-19%DVTDocumentLocation2@67"file://localhost/Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.cpp0000000000000000^2598"CompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.o BoardGame/Game.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/SDL/BoardGame    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-generated-files.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-own-target-headers.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-all-target-headers.hmap -iquote /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-project-headers.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/Debug/include -I/opt/local/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include -I/usr/local/include -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/DerivedSources/x86_64 -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/DerivedSources -F/Users/sid/Desktop/SDL/BoardGame/build/Debug -F/Users/sid/Desktop/SDL/BoardGame/Frameworls -MMD -MT dependencies -MF /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.d --serialize-diagnostics /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.dia -c /Users/sid/Desktop/SDL/BoardGame/BoardGame/Game.cpp -o /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Game.o36"C0B69249-3560-4BFB-82B4-5CC0B3FC8DCC-
-
-CCompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.o /Users/sid/Desktop/SDL/BoardGame/BoardGame/Tint.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s403462439.179648
-e403462439.361321
-r1
-xCompileC
-xbuild/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.o
-x/Users/sid/Desktop/SDL/BoardGame/BoardGame/Tint.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Compile /Users/sid/Desktop/SDL/BoardGame/BoardGame/Tint.cppa6292e27590cb841^567f5c27590cb841^---0#0#0#-19%DVTDocumentLocation2@67"file://localhost/Users/sid/Desktop/SDL/BoardGame/BoardGame/Tint.cpp0000000000000000^2598"CompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.o BoardGame/Tint.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/SDL/BoardGame    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-generated-files.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-own-target-headers.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-all-target-headers.hmap -iquote /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-project-headers.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/Debug/include -I/opt/local/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include -I/usr/local/include -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/DerivedSources/x86_64 -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/DerivedSources -F/Users/sid/Desktop/SDL/BoardGame/build/Debug -F/Users/sid/Desktop/SDL/BoardGame/Frameworls -MMD -MT dependencies -MF /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.d --serialize-diagnostics /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.dia -c /Users/sid/Desktop/SDL/BoardGame/BoardGame/Tint.cpp -o /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/Tint.o36"83E0A1B2-6183-453A-A7AC-02EE7298EFEF-
-
-CCompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.o /Users/sid/Desktop/SDL/BoardGame/BoardGame/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s403462438.332440
-e403462439.178380
-r1
-xCompileC
-xbuild/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.o
-x/Users/sid/Desktop/SDL/BoardGame/BoardGame/main.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Compile /Users/sid/Desktop/SDL/BoardGame/BoardGame/main.cpp963d5526590cb841^4ad22d27590cb841^---0#0#0#-19%DVTDocumentLocation2@67"file://localhost/Users/sid/Desktop/SDL/BoardGame/BoardGame/main.cpp0000000000000000^2598"CompileC build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.o BoardGame/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/SDL/BoardGame    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-generated-files.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-own-target-headers.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-all-target-headers.hmap -iquote /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/BoardGame-project-headers.hmap -I/Users/sid/Desktop/SDL/BoardGame/build/Debug/include -I/opt/local/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include -I/usr/local/include -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/DerivedSources/x86_64 -I/Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/DerivedSources -F/Users/sid/Desktop/SDL/BoardGame/build/Debug -F/Users/sid/Desktop/SDL/BoardGame/Frameworls -MMD -MT dependencies -MF /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.dia -c /Users/sid/Desktop/SDL/BoardGame/BoardGame/main.cpp -o /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/main.o36"DBAC34B5-5D74-4489-AB8C-DCFDDD65C4D9-
-
-CLd /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/MacOS/BoardGame normal x86_64
-s403462439.576740
-e403462443.622718
-r1
-xLd
-x/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/MacOS/BoardGame
-xnormal
-xx86_64
-old: warning: ignoring file /Users/sid/Desktop/SDL/BoardGame/BoardGame/libSDL2_image.a, missing required architecture x86_64 in file /Users/sid/Desktop/SDL/BoardGame/BoardGame/libSDL2_image.a (3 slices)
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Link /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/MacOS/BoardGamec0cc9327590cb841^2c7e9f2b590cb841^-202"ld: warning: ignoring file /Users/sid/Desktop/SDL/BoardGame/BoardGame/libSDL2_image.a, missing required architecture x86_64 in file /Users/sid/Desktop/SDL/BoardGame/BoardGame/libSDL2_image.a (3 slices)1(21%IDEActivityLogMessage2@188"Ignoring file /Users/sid/Desktop/SDL/BoardGame/BoardGame/libSDL2_image.a, missing required architecture x86_64 in file /Users/sid/Desktop/SDL/BoardGame/BoardGame/libSDL2_image.a (3 slices)-403462440#0#202#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#32"Apple Mach-O Linker (ld) Warning--0#0#0#--1121"Ld build/Debug/BoardGame.app/Contents/MacOS/BoardGame normal x86_64    cd /Users/sid/Desktop/SDL/BoardGame    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/sid/Desktop/SDL/BoardGame/build/Debug -L/opt/local/lib -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib -L/Users/sid/Desktop/SDL/BoardGame/BoardGame -F/Users/sid/Desktop/SDL/BoardGame/build/Debug -F/Users/sid/Desktop/SDL/BoardGame/Frameworls -filelist /Users/sid/Desktop/SDL/BoardGame/build/BoardGame.build/Debug/BoardGame.build/Objects-normal/x86_64/BoardGame.LinkFileList -Xlinker -rpath -Xlinker "@loader_path/../Frameworks" -mmacosx-version-min=10.7 -framework cocoa -framework SDL2 -stdlib=libc++ -framework SDL2_image -framework SDL2_mixer -framework SDL2_ttf -framework SDL2 -lSDL2_image -o /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/MacOS/BoardGame36"B7E1737A-11E7-40D6-ACFD-F54223C1BFDD-
-
-CPBXCp BoardGame/../Frameworls/SDL2.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2.framework
-s403462446.446025
-e403462447.733797
-r1
-xPBXCp
-xBoardGame/../Frameworls/SDL2.framework
-xbuild/Debug/BoardGame.app/Contents/Frameworks/SDL2.framework
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Copy build/Debug/BoardGame.app/Contents/Frameworks/SDL2.framework205f722e590cb841^4eeebb2f590cb841^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2.framework000000000080d041^409"PBXCp BoardGame/../Frameworls/SDL2.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2.framework    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2.framework /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks36"DACFF86E-DBB6-4239-954C-5513E9A96199-
-
-CPBXCp BoardGame/../Frameworls/SDL2_image.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_image.framework
-s403462443.632080
-e403462444.321169
-r1
-xPBXCp
-xBoardGame/../Frameworls/SDL2_image.framework
-xbuild/Debug/BoardGame.app/Contents/Frameworks/SDL2_image.framework
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Copy build/Debug/BoardGame.app/Contents/Frameworks/SDL2_image.framework9f00a22b590cb841^b439522c590cb841^---0#0#0#-19%DVTDocumentLocation2@115"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_image.framework000000000080d041^427"PBXCp BoardGame/../Frameworls/SDL2_image.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_image.framework    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_image.framework /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks36"32115C6A-9F17-4A12-AB93-F21C7D01AAED-
-
-CPBXCp BoardGame/../Frameworls/SDL2_mixer.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_mixer.framework
-s403462443.632677
-e403462446.444613
-r1
-xPBXCp
-xBoardGame/../Frameworls/SDL2_mixer.framework
-xbuild/Debug/BoardGame.app/Contents/Frameworks/SDL2_mixer.framework
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Copy build/Debug/BoardGame.app/Contents/Frameworks/SDL2_mixer.frameworkd11fa22b590cb841^15e2712e590cb841^---0#0#0#-19%DVTDocumentLocation2@115"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_mixer.framework000000000080d041^427"PBXCp BoardGame/../Frameworls/SDL2_mixer.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_mixer.framework    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_mixer.framework /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks36"E08284D2-A1F0-4085-B735-DB829735A269-
-
-CPBXCp BoardGame/../Frameworls/SDL2_ttf.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_ttf.framework
-s403462444.322537
-e403462448.570029
-r1
-xPBXCp
-xBoardGame/../Frameworls/SDL2_ttf.framework
-xbuild/Debug/BoardGame.app/Contents/Frameworks/SDL2_ttf.framework
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Copy build/Debug/BoardGame.app/Contents/Frameworks/SDL2_ttf.framework4bae522c590cb841^41ef9130590cb841^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks/SDL2_ttf.framework000000000080d041^421"PBXCp BoardGame/../Frameworls/SDL2_ttf.framework build/Debug/BoardGame.app/Contents/Frameworks/SDL2_ttf.framework    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/../Frameworls/SDL2_ttf.framework /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Frameworks36"1B5D50E3-BF53-4046-8CF6-99A733CF2106-
-
-CPBXCp BoardGame/BackGround.jpg build/Debug/BoardGame.app/Contents/Resources/BackGround.jpg
-s403462448.579218
-e403462448.583504
-r1
-xPBXCp
-xBoardGame/BackGround.jpg
-xbuild/Debug/BoardGame.app/Contents/Resources/BackGround.jpg
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Debug/BoardGame.app/Contents/Resources/BackGround.jpgd8619430590cb841^3c699530590cb841^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/BackGround.jpg000000000080d041^379"PBXCp BoardGame/BackGround.jpg build/Debug/BoardGame.app/Contents/Resources/BackGround.jpg    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/BackGround.jpg /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources36"7F7ADCBB-A542-4E03-8BB1-8E98C80EB984-
-
-CPBXCp BoardGame/Blue.png build/Debug/BoardGame.app/Contents/Resources/Blue.png
-s403462448.584752
-e403462448.643223
-r1
-xPBXCp
-xBoardGame/Blue.png
-xbuild/Debug/BoardGame.app/Contents/Resources/Blue.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/Debug/BoardGame.app/Contents/Resources/Blue.png8eca9530590cb841^1daba430590cb841^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Blue.png000000000080d041^361"PBXCp BoardGame/Blue.png build/Debug/BoardGame.app/Contents/Resources/Blue.png    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/Blue.png /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources36"4510F0BF-E91B-4B23-894D-7F16AA3A46D1-
-
-CPBXCp BoardGame/Green.png build/Debug/BoardGame.app/Contents/Resources/Green.png
-s403462448.644561
-e403462448.699532
-r1
-xPBXCp
-xBoardGame/Green.png
-xbuild/Debug/BoardGame.app/Contents/Resources/Green.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/Debug/BoardGame.app/Contents/Resources/Green.png751ea530590cb841^e316b330590cb841^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Green.png000000000080d041^364"PBXCp BoardGame/Green.png build/Debug/BoardGame.app/Contents/Resources/Green.png    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/Green.png /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources36"D15960FA-9AFC-4CC0-8380-00C410F7EB96-
-
-CPBXCp BoardGame/Purple.png build/Debug/BoardGame.app/Contents/Resources/Purple.png
-s403462448.701052
-e403462448.705806
-r1
-xPBXCp
-xBoardGame/Purple.png
-xbuild/Debug/BoardGame.app/Contents/Resources/Purple.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Copy build/Debug/BoardGame.app/Contents/Resources/Purple.pngf4a9b330590cb841^ddb1b430590cb841^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Purple.png000000000080d041^367"PBXCp BoardGame/Purple.png build/Debug/BoardGame.app/Contents/Resources/Purple.png    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/Purple.png /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources36"8C93F944-FCB4-4DD5-BFD2-9333A0477576-
-
-CPBXCp BoardGame/Red.png build/Debug/BoardGame.app/Contents/Resources/Red.png
-s403462448.704924
-e403462448.708857
-r1
-xPBXCp
-xBoardGame/Red.png
-xbuild/Debug/BoardGame.app/Contents/Resources/Red.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Copy build/Debug/BoardGame.app/Contents/Resources/Red.png6d91b430590cb841^6a89b530590cb841^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Red.png000000000080d041^358"PBXCp BoardGame/Red.png build/Debug/BoardGame.app/Contents/Resources/Red.png    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/Red.png /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources36"15782AD3-C39A-4878-B8BB-F5FA9DF86B6D-
-
-CPBXCp BoardGame/Yellow.png build/Debug/BoardGame.app/Contents/Resources/Yellow.png
-s403462448.708026
-e403462448.712298
-r1
-xPBXCp
-xBoardGame/Yellow.png
-xbuild/Debug/BoardGame.app/Contents/Resources/Yellow.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Copy build/Debug/BoardGame.app/Contents/Resources/Yellow.pngff5bb530590cb841^105bb630590cb841^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/Yellow.png000000000080d041^367"PBXCp BoardGame/Yellow.png build/Debug/BoardGame.app/Contents/Resources/Yellow.png    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/Yellow.png /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources36"962E36AA-6C34-4661-B6D0-EABE06C417CE-
-
-CPBXCp BoardGame/arial.ttf build/Debug/BoardGame.app/Contents/Resources/arial.ttf
-s403462448.579372
-e403462448.702699
-r1
-xPBXCp
-xBoardGame/arial.ttf
-xbuild/Debug/BoardGame.app/Contents/Resources/arial.ttf
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/Debug/BoardGame.app/Contents/Resources/arial.ttf5a679430590cb841^91f2b330590cb841^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources/arial.ttf000000000080d041^364"PBXCp BoardGame/arial.ttf build/Debug/BoardGame.app/Contents/Resources/arial.ttf    cd /Users/sid/Desktop/SDL/BoardGame    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/SDL/BoardGame/BoardGame/arial.ttf /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app/Contents/Resources36"01DBC610-BE6B-4565-8FD0-DBC3E1860838-
-
-CTouch /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app
-s403462448.721096
-e403462448.776655
-r1
-xTouch
-x/Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Touch /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.appc4afb830590cb841^f1d5c630590cb841^---0#0#0#--153"Touch build/Debug/BoardGame.app    cd /Users/sid/Desktop/SDL/BoardGame    /usr/bin/touch -c /Users/sid/Desktop/SDL/BoardGame/build/Debug/BoardGame.app36"3680EA16-0A07-43B1-B479-31D273116699-
-
