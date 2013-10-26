@@ -134,7 +134,7 @@ private:
     TYPE_SQUARE GetNewRandomType();
     TYPE_SQUARE CheckForDifferentType(TYPE_SQUARE oldType);
     void ShowInvalidSwapText();
-    void SearchTileCombination();
+    void SearchTileCombinationToDestroy();
     
     //game over variables
     bool gameOver;

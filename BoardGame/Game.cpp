@@ -15,7 +15,6 @@ static int score = 0;
 
 static int timeout = kTimeCountDown;
 
-// Singleton definition
 Game::~Game()
 {
     
@@ -522,6 +521,7 @@ void Game::CheckBoard(int posX, int posY)
                 board[tempSwap.rowValue][tempSwap.colValue] = baseTile;
 
                 //check tiles to destroy
+           
                 bool undoSwap = CheckDestroy(baseTile);
                 
                 //invalid movement
@@ -545,7 +545,7 @@ void Game::CheckBoard(int posX, int posY)
                     swapTile.tint = false;
                     baseTile.tint = false;
 
-                    SearchTileCombination();
+                    SearchTileCombinationToDestroy();
                     
                     //redraw board
                     DrawBoard();
@@ -757,7 +757,7 @@ void Game::DestroyTiles()
  *	Search for 3-tile combination (or more) after swap&move down tiles
  *
  */
-void Game::SearchTileCombination()
+void Game::SearchTileCombinationToDestroy()
 {
     //important!
     //post-check of board, if we discover a new 3-tile combination (or more) after regenerate tile it must be destroyed
