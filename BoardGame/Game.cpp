@@ -602,7 +602,7 @@ bool Game::CheckDestroy(Tile tile)
         
         if (vRightTile.type == tile.type)
         {
-//            printf("right tile - row, col: %d, %d\n", vRightTile.rowValue, vRightTile.colValue);
+            SMLog("right tile - row, col: %d, %d\n", vRightTile.rowValue, vRightTile.colValue);
             
             hCheck.push_back(vRightTile);
         }
@@ -689,7 +689,6 @@ void Game::DestroyTiles()
                 oldTile.value = (int)type;
                 oldTile.type = type;
                 oldTile.tint = false;
-                
             }
                 
             board[nRow][col] = oldTile;
