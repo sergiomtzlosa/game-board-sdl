@@ -82,7 +82,7 @@ int SdlApplication::init(int width, int height)
 	win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
 
     if (SDL_GetWindowFlags(win) & SDL_WINDOW_OPENGL)
-        printf("using openGL");
+        SMLog("using openGL", "");
     
     SDL_Surface *icon = IMG_Load("Red.png");
     SDL_SetWindowIcon(win, icon);

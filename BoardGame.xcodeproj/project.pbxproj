@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F57FECD181C6BF90086EA70 /* SMLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F57FECB181C6BF90086EA70 /* SMLog.cpp */; };
 		1F6752C118051F5B00ED5444 /* arial.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA808611804D06D00275089 /* arial.ttf */; };
 		1F9C12BE1806C7BE00188FB0 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */; };
 		1F9C12BF1806C7BE00188FB0 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C12BB1806C7BE00188FB0 /* SDL2_mixer.framework */; };
@@ -69,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F57FECB181C6BF90086EA70 /* SMLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SMLog.cpp; sourceTree = "<group>"; };
+		1F57FECC181C6BF90086EA70 /* SMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLog.h; sourceTree = "<group>"; };
 		1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../Frameworls/SDL2_image.framework; sourceTree = "<group>"; };
 		1F9C12BB1806C7BE00188FB0 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../Frameworls/SDL2_mixer.framework; sourceTree = "<group>"; };
 		1F9C12BC1806C7BE00188FB0 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../Frameworls/SDL2_ttf.framework; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				1FDE9C141804A5C600EBF4F5 /* Game.h */,
 				1F9C12C21806D13500188FB0 /* Tint.cpp */,
 				1F9C12C31806D13500188FB0 /* Tint.h */,
+				1F57FECB181C6BF90086EA70 /* SMLog.cpp */,
+				1F57FECC181C6BF90086EA70 /* SMLog.h */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				1FB438CA18045EBE009A354D /* main.cpp in Sources */,
 				1FDE9C151804A5C600EBF4F5 /* Game.cpp in Sources */,
 				1F9C12C41806D13500188FB0 /* Tint.cpp in Sources */,
+				1F57FECD181C6BF90086EA70 /* SMLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +290,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=0";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;

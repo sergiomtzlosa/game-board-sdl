@@ -16,6 +16,13 @@
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_ttf/SDL_ttf.h>
+#include "SMLog.h"
+
+#ifdef DEBUG
+#define kDefineLog true
+#else
+#define kDefineLog false
+#endif
 
 #define kTotalRows 8
 
