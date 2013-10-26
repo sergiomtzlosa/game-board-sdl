@@ -682,8 +682,7 @@ void Game::DestroyTiles()
             if (row < 0)
             {
                 //generate different tile types
-                Tile diffTile = board[row + 2][col];
-                TYPE_SQUARE type = CheckForDifferentType(diffTile.type);
+                TYPE_SQUARE type = CheckForDifferentType(oldTile);
                 
                 oldTile.value = (int)type;
                 oldTile.type = type;
@@ -725,7 +724,7 @@ void Game::DestroyTiles()
                     
                     Tile tile = board[0][col - 1];
                     
-                    TYPE_SQUARE type = CheckForDifferentType(tile.type);
+                    TYPE_SQUARE type = CheckForDifferentType(tile);
                     
                     newTile.value = (int)type;
                     newTile.type = type;
@@ -781,15 +780,81 @@ void Game::SearchTileCombinationToDestroy()
  *
  *	@return	New random type of tile
  */
-TYPE_SQUARE Game::CheckForDifferentType(TYPE_SQUARE oldType)
+TYPE_SQUARE Game::CheckForDifferentType(Tile oldTile)
 {
     TYPE_SQUARE newType = GetNewRandomType();
     
-    if (newType == oldType)
+    int r = oldTile.rowValue;
+    int c = oldTile.colValue;
+    
+    Tile right;
+    Tile left;
+    
+    int typeRight = -1;
+    int typeLeft = -1;
+    
+    if (c < kTotalCols - 1)
     {
-        return CheckForDifferentType(oldType);
+        right = board[r][c + 1];
+        typeRight = right.type;
     }
     
+    if (c > 0)
+    {
+        left = board[r][c - 1];
+        typeLeft = left.type;
+    }
+    
+    Tile down, up;
+    int typeUp = -1;
+    int typeDown = -1;
+    
+    if (r > 0)
+    {
+        up = board[r - 1][c];
+        typeUp = up.type;
+    }
+    
+    if (r < kTotalRows - 1)
+    {
+        down = board[r + 1][c];
+        typeDown = down.type;
+    }
+
+//    printf("Type up: %d, down: %d, right: %d, left: %d, newType: %d\n", typeUp, typeDown, typeRight, typeLeft, newType);
+    
+    if (typeRight != -1)
+    {
+         if (typeRight == newType)
+         {
+             return CheckForDifferentType(oldTile);
+         }
+    }
+    
+    if (typeLeft != -1)
+    {
+        if (typeLeft == newType)
+        {
+            return CheckForDifferentType(oldTile);
+        }
+    }
+    
+    if (typeUp != -1)
+    {
+        if (typeUp == newType)
+        {
+            return CheckForDifferentType(oldTile);
+        }
+    }
+    
+    if (typeDown != -1)
+    {
+        if (typeDown == newType)
+        {
+            return CheckForDifferentType(oldTile);
+        }
+    }
+
     return newType;
 }
 

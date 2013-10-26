@@ -132,7 +132,7 @@ private:
     bool CheckDestroy(Tile tile);
     void DestroyTiles();
     TYPE_SQUARE GetNewRandomType();
-    TYPE_SQUARE CheckForDifferentType(TYPE_SQUARE oldType);
+    TYPE_SQUARE CheckForDifferentType(Tile oldTile);
     void ShowInvalidSwapText();
     void SearchTileCombinationToDestroy();
     
