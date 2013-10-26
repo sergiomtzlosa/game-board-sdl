@@ -681,13 +681,15 @@ void Game::DestroyTiles()
             
             if (row < 0)
             {
+                oldTile.colValue = col;
+                
                 //generate different tile types
                 TYPE_SQUARE type = CheckForDifferentType(oldTile);
                 
                 oldTile.value = (int)type;
                 oldTile.type = type;
                 oldTile.tint = false;
-                oldTile.colValue = col;
+                
             }
                 
             board[nRow][col] = oldTile;
@@ -721,10 +723,8 @@ void Game::DestroyTiles()
                     Tile newTile;
                     newTile.rowValue = 0;
                     newTile.colValue = col;
-                    
-                    Tile tile = board[0][col - 1];
-                    
-                    TYPE_SQUARE type = CheckForDifferentType(tile);
+
+                    TYPE_SQUARE type = CheckForDifferentType(newTile);
                     
                     newTile.value = (int)type;
                     newTile.type = type;
