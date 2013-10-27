@@ -7,6 +7,9 @@
 //
 
 #include "SMLog.h"
+#include <SDL2/SDL.h>
+
+#define kAppName "Gems "
 
 void SMLog::Log(bool allowLog, const char *fmt, ...)
 {
@@ -14,7 +17,16 @@ void SMLog::Log(bool allowLog, const char *fmt, ...)
     {
         va_list args;
         va_start(args, fmt);
-        vfprintf(stderr, fmt, args);
+        
+        string fmtStr;
+        fmtStr.append(" - [GEMS GAME] - ");
+
+        fmtStr.append(fmt);
+        
+        string str = currentDateTime() + fmtStr + "\n";
+        
+        vfprintf(stderr, str.c_str(), args);
+        
         va_end(args);
     }
 }

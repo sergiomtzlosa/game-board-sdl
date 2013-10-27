@@ -8,6 +8,7 @@
 
 #include "Game.h"
 #include "Tint.h"
+#include "CAnimation.h"
 
 static string tiles[kMaxTile] = { "Red.png", "Blue.png", "Green.png", "Purple.png", "Yellow.png" };
 
@@ -59,7 +60,7 @@ void Game::RenderGame(SDL_Renderer *renderObject, SDL_Window *window)
         
         if (!CanMakeMoves())
         {
-            SMLog("no movements left!!!, resetting board....\n", "");
+            SMLog2("no movements left!!!, resetting board....");
             SetResetBoardText();
         }
     }
@@ -349,8 +350,14 @@ void Game::DrawTileBoard(Tile tile)
         TintValues tint = TintValues(105, 105, 105, 1);
         Tint::TintSurface(image, tint);
     }
- 
+    
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, image);
+    
+//    if (tile.tint == false)
+//    {
+//        CAnimation::FadeTexture(0.1, texture);
+//    }
+    
     SDL_FreeSurface(image);
     SDL_QueryTexture(texture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
     
@@ -396,7 +403,7 @@ void Game::TrackEvent(SDL_Event *e)
             {
                 if (IsPointInRect(posX, posY, retryX, retryY, retryWidth, retryWidth))
                 {
-                    SMLog("resetting board for game over...\n", "");
+                    SMLog2("resetting board for game over...");
                     gameOver = false;
                     ResetBoard();
                 }
@@ -568,7 +575,7 @@ bool Game::CheckDestroy(Tile tile)
 {
     //check if type of nearby tiles is the same as the input time on N/E/W/S if not do nothing
     
-    SMLog("original tile - row, col: %d, %d\n", tile.rowValue, tile.colValue);
+    SMLog("original tile - row, col: %d, %d", tile.rowValue, tile.colValue);
     
     hCheck.clear();
     hCheck.push_back(tile);
@@ -585,7 +592,7 @@ bool Game::CheckDestroy(Tile tile)
     
         if (vLeftTile.type == tile.type)
         {
-            SMLog("left tile - row, col: %d, %d\n", vLeftTile.rowValue, vLeftTile.colValue);
+            SMLog("left tile - row, col: %d, %d", vLeftTile.rowValue, vLeftTile.colValue);
             
             hCheck.push_back(vLeftTile);
         }
@@ -602,7 +609,7 @@ bool Game::CheckDestroy(Tile tile)
         
         if (vRightTile.type == tile.type)
         {
-            SMLog("right tile - row, col: %d, %d\n", vRightTile.rowValue, vRightTile.colValue);
+            SMLog("right tile - row, col: %d, %d", vRightTile.rowValue, vRightTile.colValue);
             
             hCheck.push_back(vRightTile);
         }
@@ -610,7 +617,7 @@ bool Game::CheckDestroy(Tile tile)
             break;
     }
     
-    SMLog("horizontal elements : %ld\n", hCheck.size());
+    SMLog("horizontal elements : %ld", hCheck.size());
     
     //check upper vertical tile
     for (int i = tile.rowValue - 1; i >= 0; i--)
@@ -638,11 +645,11 @@ bool Game::CheckDestroy(Tile tile)
             break;
     }
     
-    SMLog("vertical elements : %ld\n", vCheck.size());
+    SMLog("vertical elements : %ld", vCheck.size());
     
     if (vCheck.size() < 3 && hCheck.size() < 3)
     {
-        SMLog("invalid movement, switching back tiles", "");
+        SMLog2("invalid movement, switching back tiles");
         return true;
     }
     else
@@ -693,7 +700,7 @@ void Game::DestroyTiles()
                 
             board[nRow][col] = oldTile;
             
-            SMLog("nRow, col : %d %d\n", nRow , col);
+            SMLog("nRow, col : %d %d", nRow , col);
         }
 
         vCheck.clear();
@@ -707,7 +714,7 @@ void Game::DestroyTiles()
         
         std::sort(hCheck.begin(), hCheck.end(), SortingVectorCols);
 
-        SMLog("size: %ld\n", hCheck.size());
+        SMLog("size: %ld", hCheck.size());
 
         for (Tile dTile : hCheck)
         {
@@ -730,7 +737,7 @@ void Game::DestroyTiles()
                     newTile.tint = false;
                     board[0][col] = newTile;
                     
-                    SMLog("srcCol : %d\n", col);
+                    SMLog("srcCol : %d", col);
                 }
                 else
                 {
@@ -740,7 +747,7 @@ void Game::DestroyTiles()
                     
                     board[row][col] = tile;
                     
-                    SMLog("srcRow : %d, %d \n", row, col);
+                    SMLog("srcRow : %d, %d", row, col);
                 }
             }
         }
@@ -820,7 +827,7 @@ TYPE_SQUARE Game::CheckForDifferentType(Tile oldTile)
         typeDown = down.type;
     }
 
-    SMLog("Type up: %d, down: %d, right: %d, left: %d, newType: %d\n", typeUp, typeDown, typeRight, typeLeft, newType);
+    SMLog("Type up: %d, down: %d, right: %d, left: %d, newType: %d", typeUp, typeDown, typeRight, typeLeft, newType);
     
     if (typeRight != -1)
     {
@@ -1046,7 +1053,7 @@ bool Game::CanMakeMoves()
                 }
             }
             
-            SMLog("same tiles %d\n", sameTiles);
+            SMLog("same tiles %d", sameTiles);
             
             if (sameTiles >= 2)
             {
