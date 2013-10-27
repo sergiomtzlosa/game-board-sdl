@@ -553,7 +553,6 @@ void Game::CheckBoard(int posX, int posY)
                     DrawBoard();
                     
                     SoundManager::Instance()->PlaySound("laser.wav");
-                    
                 }
             }
             else

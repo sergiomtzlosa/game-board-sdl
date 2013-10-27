@@ -14,6 +14,7 @@ using namespace std;
 class SoundManager
 {
 public:
+    
 	static SoundManager* Instance();
 	~SoundManager();
 	SoundManager();
@@ -24,7 +25,9 @@ public:
     void CleanUp();
     
 private:
+    
 	static SoundManager* singletonInstance;
+    
     Mix_Chunk *wav;
     Mix_Music *backMusic;
 };
