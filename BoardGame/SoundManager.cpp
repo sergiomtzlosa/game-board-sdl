@@ -38,14 +38,18 @@ SoundManager::~SoundManager()
 
 }
 
-void SoundManager::PlaySound(const char *file)
+int SoundManager::PlaySound(const char *file)
 {
    wav = Mix_LoadWAV(file);
     
     int channel = Mix_PlayChannel(-1, wav, 0);
     
     if (channel == -1)
+    {
         fprintf(stderr, "Unable to play WAV file: %s\n", Mix_GetError());
+    }
+    
+    return channel;
 }
 
 int SoundManager::PlayMusic(const char *musicFile)

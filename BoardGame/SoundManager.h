@@ -19,7 +19,7 @@ public:
 	~SoundManager();
 	SoundManager();
 
-    void PlaySound(const char *file);
+    int PlaySound(const char *file);
     int PlayMusic(const char *musicFile);
 
     void CleanUp();
