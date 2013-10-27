@@ -270,6 +270,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DDEVELOPMENT=1";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -290,12 +291,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=0";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "-DDEVELOPMENT=0";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -304,6 +306,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworls\"";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES;
 				HEADER_SEARCH_PATHS = (
 					/opt/local/include,
 					/usr/include,
@@ -315,11 +322,13 @@
 					/usr/lib,
 					"\"$(SRCROOT)/BoardGame\"",
 				);
+				OTHER_CFLAGS = "-DDEVELOPMENT=1";
 				OTHER_LDFLAGS = (
 					"-framework",
 					cocoa,
 					"-framework",
 					SDL2,
+					"-w",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -329,7 +338,10 @@
 		1FB438CF18045EBE009A354D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworls\"";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES;
 				HEADER_SEARCH_PATHS = (
 					/opt/local/include,
 					/usr/include,
@@ -341,11 +353,16 @@
 					/usr/lib,
 					"\"$(SRCROOT)/BoardGame\"",
 				);
+				OTHER_CFLAGS = (
+					"-DDEVELOPMENT=0",
+					"-w",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					cocoa,
 					"-framework",
 					SDL2,
+					"-w",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
