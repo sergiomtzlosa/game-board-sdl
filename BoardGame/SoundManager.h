@@ -1,5 +1,5 @@
 //
-//  Tint.cpp
+//  SoundManager.h
 //  BoardGame
 //
 //  Created by sid on 10/10/13.
@@ -8,8 +8,6 @@
 
 #include <SDL2_Mixer/SDL_mixer.h>
 #include <string>
-
-#define NUM_SOUNDS 1
 
 using namespace std;
 

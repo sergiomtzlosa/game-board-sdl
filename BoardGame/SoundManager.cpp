@@ -1,5 +1,7 @@
 //
 //  Tint.cpp
+//
+//  SoundManager.cpp
 //  BoardGame
 //
 //  Created by sid on 10/10/13.
