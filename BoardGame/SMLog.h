@@ -13,6 +13,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+#ifdef DEBUG
+#define kDefineLog true
+#else
+#define kDefineLog false
+#endif
+
 #define SMLog(fmt, ...) SMLog::Log(kDefineLog, fmt, __VA_ARGS__)
 
 #define SMLog2(fmt) SMLog::Log(kDefineLog, fmt, NULL)

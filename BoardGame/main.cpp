@@ -73,12 +73,14 @@ SdlApplication::~SdlApplication()
 int SdlApplication::init(int width, int height)
 {
 	// Initialize the SDL library.
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
 	{
 		fprintf(stderr, "SDL_Init() failed: %s\n", SDL_GetError());
 		return APP_FAILED;
 	}
 	
+    SoundManager::Instance()->PlayMusic("DST-Azum.mp3");
+    
 	win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
 
     if (SDL_GetWindowFlags(win) & SDL_WINDOW_OPENGL)
@@ -102,6 +104,9 @@ void SdlApplication::destroy()
 {
 	if (win)
 	{
+        SoundManager::Instance()->CleanUp();
+        delete SoundManager::Instance();
+        
         //destroy game
         delete newGame;
         newGame = NULL;

@@ -17,12 +17,8 @@
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_ttf/SDL_ttf.h>
 #include "SMLog.h"
-
-#ifdef DEBUG
-#define kDefineLog true
-#else
-#define kDefineLog false
-#endif
+#include <SDL2_mixer/SDL_mixer.h>
+#include "SoundManager.h"
 
 #define kTotalRows 8
 

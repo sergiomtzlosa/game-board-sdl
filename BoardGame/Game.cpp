@@ -551,6 +551,9 @@ void Game::CheckBoard(int posX, int posY)
                     
                     //redraw board
                     DrawBoard();
+                    
+                    SoundManager::Instance()->PlaySound("laser.wav");
+                    
                 }
             }
             else

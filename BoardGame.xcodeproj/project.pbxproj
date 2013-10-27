@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1F2D2F3B181D56C10067CE50 /* CAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D2F39181D56C10067CE50 /* CAnimation.cpp */; };
+		1F2D2F40181D69140067CE50 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D2F3E181D69140067CE50 /* SoundManager.cpp */; };
+		1F2D2F43181D6BD00067CE50 /* laser.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2D2F41181D6B3B0067CE50 /* laser.wav */; };
+		1F2D2F4A181D76CD0067CE50 /* DST-Azum.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2D2F49181D76C10067CE50 /* DST-Azum.mp3 */; };
 		1F57FECD181C6BF90086EA70 /* SMLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F57FECB181C6BF90086EA70 /* SMLog.cpp */; };
 		1F6752C118051F5B00ED5444 /* arial.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA808611804D06D00275089 /* arial.ttf */; };
 		1F9C12BE1806C7BE00188FB0 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */; };
@@ -58,6 +61,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				1F2D2F4A181D76CD0067CE50 /* DST-Azum.mp3 in CopyFiles */,
+				1F2D2F43181D6BD00067CE50 /* laser.wav in CopyFiles */,
 				1FB438FC18045F56009A354D /* BackGround.jpg in CopyFiles */,
 				1F6752C118051F5B00ED5444 /* arial.ttf in CopyFiles */,
 				1FB438FE18045F56009A354D /* Blue.png in CopyFiles */,
@@ -73,6 +78,10 @@
 /* Begin PBXFileReference section */
 		1F2D2F39181D56C10067CE50 /* CAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAnimation.cpp; sourceTree = "<group>"; };
 		1F2D2F3A181D56C10067CE50 /* CAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAnimation.h; sourceTree = "<group>"; };
+		1F2D2F3E181D69140067CE50 /* SoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundManager.cpp; sourceTree = "<group>"; };
+		1F2D2F3F181D69140067CE50 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		1F2D2F41181D6B3B0067CE50 /* laser.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser.wav; sourceTree = "<group>"; };
+		1F2D2F49181D76C10067CE50 /* DST-Azum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DST-Azum.mp3"; sourceTree = "<group>"; };
 		1F57FECB181C6BF90086EA70 /* SMLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SMLog.cpp; sourceTree = "<group>"; };
 		1F57FECC181C6BF90086EA70 /* SMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLog.h; sourceTree = "<group>"; };
 		1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../Frameworls/SDL2_image.framework; sourceTree = "<group>"; };
@@ -109,6 +118,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2D2F3C181D68E50067CE50 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				1F57FECB181C6BF90086EA70 /* SMLog.cpp */,
+				1F57FECC181C6BF90086EA70 /* SMLog.h */,
+			);
+			name = Log;
+			sourceTree = "<group>";
+		};
+		1F2D2F3D181D68F20067CE50 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1F2D2F3E181D69140067CE50 /* SoundManager.cpp */,
+				1F2D2F3F181D69140067CE50 /* SoundManager.h */,
+				1F9C12C21806D13500188FB0 /* Tint.cpp */,
+				1F9C12C31806D13500188FB0 /* Tint.h */,
+				1F2D2F39181D56C10067CE50 /* CAnimation.cpp */,
+				1F2D2F3A181D56C10067CE50 /* CAnimation.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		1F2D2F42181D6B3E0067CE50 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1F2D2F49181D76C10067CE50 /* DST-Azum.mp3 */,
+				1F2D2F41181D6B3B0067CE50 /* laser.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		1FA808651804D1F600275089 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +176,7 @@
 		1FB438C818045EBE009A354D /* BoardGame */ = {
 			isa = PBXGroup;
 			children = (
+				1F2D2F42181D6B3E0067CE50 /* Sounds */,
 				1FA808651804D1F600275089 /* Fonts */,
 				1FB438FB18045F3E009A354D /* Images */,
 				1FB438F118045F19009A354D /* Code */,
@@ -158,15 +199,11 @@
 		1FB438F118045F19009A354D /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				1F2D2F3D181D68F20067CE50 /* Utils */,
+				1F2D2F3C181D68E50067CE50 /* Log */,
 				1FB438C918045EBE009A354D /* main.cpp */,
 				1FDE9C131804A5C600EBF4F5 /* Game.cpp */,
 				1FDE9C141804A5C600EBF4F5 /* Game.h */,
-				1F9C12C21806D13500188FB0 /* Tint.cpp */,
-				1F9C12C31806D13500188FB0 /* Tint.h */,
-				1F57FECB181C6BF90086EA70 /* SMLog.cpp */,
-				1F57FECC181C6BF90086EA70 /* SMLog.h */,
-				1F2D2F39181D56C10067CE50 /* CAnimation.cpp */,
-				1F2D2F3A181D56C10067CE50 /* CAnimation.h */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -242,6 +279,7 @@
 				1F9C12C41806D13500188FB0 /* Tint.cpp in Sources */,
 				1F57FECD181C6BF90086EA70 /* SMLog.cpp in Sources */,
 				1F2D2F3B181D56C10067CE50 /* CAnimation.cpp in Sources */,
+				1F2D2F40181D69140067CE50 /* SoundManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +349,10 @@
 		1FB438CE18045EBE009A354D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworls\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/Frameworls\"",
+					"\"$(SRCROOT)/BoardGame\"",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -345,7 +386,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworls\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/Frameworls\"",
+					"\"$(SRCROOT)/BoardGame\"",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES;
 				HEADER_SEARCH_PATHS = (
