@@ -149,6 +149,16 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		1F2D2F4B181D7B760067CE50 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F2D2F42181D6B3E0067CE50 /* Sounds */,
+				1FA808651804D1F600275089 /* Fonts */,
+				1FB438FB18045F3E009A354D /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1FA808651804D1F600275089 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,9 +186,7 @@
 		1FB438C818045EBE009A354D /* BoardGame */ = {
 			isa = PBXGroup;
 			children = (
-				1F2D2F42181D6B3E0067CE50 /* Sounds */,
-				1FA808651804D1F600275089 /* Fonts */,
-				1FB438FB18045F3E009A354D /* Images */,
+				1F2D2F4B181D7B760067CE50 /* Resources */,
 				1FB438F118045F19009A354D /* Code */,
 				1FB438F018045F0C009A354D /* Frameworks */,
 			);
@@ -199,8 +207,8 @@
 		1FB438F118045F19009A354D /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				1F2D2F3D181D68F20067CE50 /* Utils */,
 				1F2D2F3C181D68E50067CE50 /* Log */,
+				1F2D2F3D181D68F20067CE50 /* Utils */,
 				1FB438C918045EBE009A354D /* main.cpp */,
 				1FDE9C131804A5C600EBF4F5 /* Game.cpp */,
 				1FDE9C141804A5C600EBF4F5 /* Game.h */,
