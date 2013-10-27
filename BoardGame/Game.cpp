@@ -1177,9 +1177,13 @@ CRect Game::DrawText(const char *text, CRect srcRect, CRect dstRect, int fontSiz
         
     SDL_Color foregroundColor = { 255, 255, 255 };
     
-    SDL_Surface *textSurface = TTF_RenderText_Solid(font, text, foregroundColor);
-    
+    SDL_Surface *textSurface = TTF_RenderText_Solid(font, "", foregroundColor);
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, textSurface);
+    SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
+    SDL_FreeSurface(textSurface);
+    
+    textSurface = TTF_RenderText_Solid(font, text, foregroundColor);
+    texture = SDL_CreateTextureFromSurface(renderer, textSurface);
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
     SDL_FreeSurface(textSurface);
     
