@@ -151,7 +151,7 @@ private:
     bool IsPointInRect(int x, int y, int rPointX, int rPointY, int rWidth, int rHeight);
     
     //Inline helper methods
-    static inline string ConvertInt(int number)
+    static inline string ConvertIntToString(int number)
     {
         std::ostringstream ss;
         ss << number;

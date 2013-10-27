@@ -86,7 +86,7 @@ void Game::SetScore(int scoreValue)
     dstRect.x = 120;
     dstRect.y = 110;
     
-    const char *strScore = ConvertInt(score).c_str();
+    const char *strScore = ConvertIntToString(score).c_str();
     
     DrawText(strScore, srcRect, dstRect, 22, "ARIAL.TTF");
 }
@@ -109,7 +109,7 @@ void Game::SetTime(int timeValue)
     dstRect.x = 120;
     dstRect.y = 195;
     
-    const char *strScore = ConvertInt(timeValue).c_str();
+    const char *strScore = ConvertIntToString(timeValue).c_str();
     
     DrawText(strScore, srcRect, dstRect, 22, "ARIAL.TTF");
 }
