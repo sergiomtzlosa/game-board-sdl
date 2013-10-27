@@ -15,7 +15,7 @@ using namespace std;
 
 SoundManager* SoundManager::singletonInstance = NULL;
 
-SoundManager *SoundManager::Instance()
+SoundManager* SoundManager::Instance()
 {
 	if (singletonInstance == NULL)
     {
