@@ -322,7 +322,7 @@
 					/usr/lib,
 					"\"$(SRCROOT)/BoardGame\"",
 				);
-				OTHER_CFLAGS = "-DDEVELOPMENT=1";
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
 					cocoa,
@@ -353,10 +353,7 @@
 					/usr/lib,
 					"\"$(SRCROOT)/BoardGame\"",
 				);
-				OTHER_CFLAGS = (
-					"-DDEVELOPMENT=0",
-					"-w",
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
 					cocoa,
