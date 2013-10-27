@@ -11,6 +11,7 @@
 		1F2D2F40181D69140067CE50 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D2F3E181D69140067CE50 /* SoundManager.cpp */; };
 		1F2D2F43181D6BD00067CE50 /* laser.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2D2F41181D6B3B0067CE50 /* laser.wav */; };
 		1F2D2F4A181D76CD0067CE50 /* DST-Azum.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2D2F49181D76C10067CE50 /* DST-Azum.mp3 */; };
+		1F2D2F4D181D82FF0067CE50 /* SourceSansPro-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2D2F4C181D82F80067CE50 /* SourceSansPro-Regular.ttf */; };
 		1F57FECD181C6BF90086EA70 /* SMLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F57FECB181C6BF90086EA70 /* SMLog.cpp */; };
 		1F6752C118051F5B00ED5444 /* arial.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA808611804D06D00275089 /* arial.ttf */; };
 		1F9C12BE1806C7BE00188FB0 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */; };
@@ -61,6 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				1F2D2F4D181D82FF0067CE50 /* SourceSansPro-Regular.ttf in CopyFiles */,
 				1F2D2F4A181D76CD0067CE50 /* DST-Azum.mp3 in CopyFiles */,
 				1F2D2F43181D6BD00067CE50 /* laser.wav in CopyFiles */,
 				1FB438FC18045F56009A354D /* BackGround.jpg in CopyFiles */,
@@ -82,6 +84,7 @@
 		1F2D2F3F181D69140067CE50 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		1F2D2F41181D6B3B0067CE50 /* laser.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser.wav; sourceTree = "<group>"; };
 		1F2D2F49181D76C10067CE50 /* DST-Azum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DST-Azum.mp3"; sourceTree = "<group>"; };
+		1F2D2F4C181D82F80067CE50 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		1F57FECB181C6BF90086EA70 /* SMLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SMLog.cpp; sourceTree = "<group>"; };
 		1F57FECC181C6BF90086EA70 /* SMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLog.h; sourceTree = "<group>"; };
 		1F9C12BA1806C7BE00188FB0 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../Frameworls/SDL2_image.framework; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 		1FA808651804D1F600275089 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1F2D2F4C181D82F80067CE50 /* SourceSansPro-Regular.ttf */,
 				1FA808611804D06D00275089 /* arial.ttf */,
 			);
 			name = Fonts;

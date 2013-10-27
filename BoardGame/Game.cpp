@@ -89,7 +89,7 @@ void Game::SetScore(int scoreValue)
     
     const char *strScore = ConvertIntToString(score).c_str();
     
-    DrawText(strScore, srcRect, dstRect, 22, "ARIAL.TTF");
+    DrawText(strScore, srcRect, dstRect, 32, "SourceSansPro-Regular.ttf");
 }
 
 /**
@@ -112,7 +112,7 @@ void Game::SetTime(int timeValue)
     
     const char *strScore = ConvertIntToString(timeValue).c_str();
     
-    DrawText(strScore, srcRect, dstRect, 22, "ARIAL.TTF");
+    DrawText(strScore, srcRect, dstRect, 32, "SourceSansPro-Regular.ttf");
 }
 
 /**
@@ -153,13 +153,13 @@ void Game::SetFixedText()
     dstRect.x = 100;
     dstRect.y = 70;
     
-    DrawText("Score", srcRect, dstRect, 22, "ARIAL.TTF");
+    DrawText("Score", srcRect, dstRect, 22, "SourceSansPro-Regular.ttf");
 
     CRect dstRect2;
     dstRect2.x = 105;
     dstRect2.y = 150;
     
-    DrawText("Time", srcRect, dstRect2, 22, "ARIAL.TTF");
+    DrawText("Time", srcRect, dstRect2, 22, "SourceSansPro-Regular.ttf");
 }
 
 /**
@@ -887,7 +887,7 @@ void Game::ShowInvalidSwapText()
     dstRect.x = kBaseTilePositionX + 60;
     dstRect.y = 480;
     
-    DrawText("Invalid move!", srcRect, dstRect, 40, "ARIAL.TTF");
+    DrawText("Invalid move!", srcRect, dstRect, 40, "SourceSansPro-Regular.ttf");
 }
 
 /**
@@ -906,7 +906,7 @@ void Game::CreateGameOver()
     dstRect.x = kBaseTilePositionX + 60;;
     dstRect.y = 150;
 
-    DrawText("Game Over", srcRect, dstRect, 40, "ARIAL.TTF");
+    DrawText("Game Over", srcRect, dstRect, 40, "SourceSansPro-Regular.ttf");
     
     CRect dstRect2;
     dstRect2.x = kBaseTilePositionX + 60;
@@ -916,13 +916,13 @@ void Game::CreateGameOver()
     ss << "Your score is: " << score;
     const char *strScore = ss.str().c_str();
     
-    DrawText(strScore, srcRect, dstRect2, 30, "ARIAL.TTF");
+    DrawText(strScore, srcRect, dstRect2, 30, "SourceSansPro-Regular.ttf");
     
     CRect dstRect3;
     dstRect3.x = kBaseTilePositionX + 50;
     dstRect3.y = 350;
     
-    CRect final = DrawText("Click here to retry", srcRect, dstRect3, 30, "ARIAL.TTF");
+    CRect final = DrawText("Click here to retry", srcRect, dstRect3, 30, "SourceSansPro-Regular.ttf");
     
     retryWidth = final.width;
     retryHeight = final.height;
@@ -1084,13 +1084,13 @@ void Game::SetResetBoardText()
     dstRect.x = kBaseTilePositionX + 40;
     dstRect.y = 150;
     
-    DrawText("No movements left!!!", srcRect, dstRect, 30, "ARIAL.TTF");
+    DrawText("No movements left!!!", srcRect, dstRect, 30, "SourceSansPro-Regular.ttf");
 
     CRect dstRect2;
     dstRect2.x = kBaseTilePositionX + 20;
     dstRect2.y = 280;
 
-    CRect finalRect = DrawText("Click here to reset board", srcRect, dstRect2, 30, "ARIAL.TTF");
+    CRect finalRect = DrawText("Click here to reset board", srcRect, dstRect2, 30, "SourceSansPro-Regular.ttf");
     
     resetBX = finalRect.x;
     resetBY = finalRect.y;
@@ -1112,13 +1112,13 @@ void Game::SetStartText()
     dstRect.x = kBaseTilePositionX + 30;
     dstRect.y = 150;
     
-    DrawText("Gems Game", srcRect, dstRect, 50, "ARIAL.TTF");
+    DrawText("Gems Game", srcRect, dstRect, 50, "SourceSansPro-Regular.ttf");
 
     CRect dstRect2;
     dstRect2.x = kBaseTilePositionX + 20;
     dstRect2.y = 280;
     
-    CRect dstFinal = DrawText("Click here to start", srcRect, dstRect2, 40, "ARIAL.TTF");
+    CRect dstFinal = DrawText("Click here to start", srcRect, dstRect2, 40, "SourceSansPro-Regular.ttf");
     
     startX = dstFinal.x;
     startY = dstFinal.y;
@@ -1142,7 +1142,7 @@ void Game::SetStopText()
     dstRect.x = 75;
     dstRect.y = 440;
 
-    CRect dstFinal = DrawText("Stop", srcRect, dstRect, 40, "ARIAL.TTF");
+    CRect dstFinal = DrawText("Stop", srcRect, dstRect, 40, "SourceSansPro-Regular.ttf");
     
     stopX = dstFinal.x;
     stopY = dstFinal.y;
@@ -1169,7 +1169,7 @@ CRect Game::DrawText(const char *text, CRect srcRect, CRect dstRect, int fontSiz
     
     if (font == NULL)
     {
-        cerr << "Load ARIAL.TTF Failed: " << TTF_GetError() << endl;
+        cerr << "Load SourceSansPro-Regular.ttf Failed: " << TTF_GetError() << endl;
         TTF_Quit();
         SDL_Quit();
         exit(1);
