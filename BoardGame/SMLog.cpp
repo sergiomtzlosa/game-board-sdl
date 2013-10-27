@@ -21,7 +21,7 @@ void SMLog::Log(bool allowLog, const char *fmt, ...)
         string fmtStr;
         fmtStr.append(fmt);
         
-        string str = "[GEMS GAME] - " + currentDateTime() + " - " + fmtStr + "\n";
+        string str = "[GEMS GAME] - " + CurrentDateTime() + " - " + fmtStr + "\n";
         
         vfprintf(stderr, str.c_str(), args);
         

@@ -27,7 +27,7 @@ public:
     
 private:
     
-    static inline string currentDateTime()
+    static inline string CurrentDateTime()
     {
         time_t now = time(0);
         struct tm  tstruct;
