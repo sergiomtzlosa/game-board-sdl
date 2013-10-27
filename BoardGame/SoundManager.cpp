@@ -15,7 +15,6 @@ using namespace std;
 
 SoundManager* SoundManager::singletonInstance = NULL;
 
-/* Make sound a singleton so that we can use it in various places, but not have to worry about multiple instances existing. */
 SoundManager *SoundManager::Instance()
 {
 	if (singletonInstance == NULL)
