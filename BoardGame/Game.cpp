@@ -353,11 +353,6 @@ void Game::DrawTileBoard(Tile tile)
     
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, image);
     
-//    if (tile.tint == false)
-//    {
-//        CAnimation::FadeTexture(0.1, texture);
-//    }
-    
     SDL_FreeSurface(image);
     SDL_QueryTexture(texture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
     
