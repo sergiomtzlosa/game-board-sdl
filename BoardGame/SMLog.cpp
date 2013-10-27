@@ -19,11 +19,9 @@ void SMLog::Log(bool allowLog, const char *fmt, ...)
         va_start(args, fmt);
         
         string fmtStr;
-        fmtStr.append(" - [GEMS GAME] - ");
-
         fmtStr.append(fmt);
         
-        string str = currentDateTime() + fmtStr + "\n";
+        string str = "[GEMS GAME] - " + currentDateTime() + " - " + fmtStr + "\n";
         
         vfprintf(stderr, str.c_str(), args);
         
