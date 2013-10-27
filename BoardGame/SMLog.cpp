@@ -9,8 +9,6 @@
 #include "SMLog.h"
 #include <SDL2/SDL.h>
 
-#define kAppName "Gems "
-
 void SMLog::Log(bool allowLog, const char *fmt, ...)
 {
     if (allowLog)
