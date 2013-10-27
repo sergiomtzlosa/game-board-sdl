@@ -67,7 +67,9 @@ int SoundManager::PlayMusic(const char *musicFile)
 
 void SoundManager::CleanUp()
 {
-	Mix_FreeChunk(wav);
+    if (wav != NULL)
+        Mix_FreeChunk(wav);
+    
     Mix_FreeMusic(backMusic);
     
     //Quit SDL_mixer

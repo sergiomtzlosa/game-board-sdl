@@ -52,9 +52,9 @@ struct SdlApplication
     Game *newGame;
 };
 
-SdlApplication::SdlApplication() :
-_running(false)
+SdlApplication::SdlApplication() : _running(false)
 {
+    
 }
 
 SdlApplication::~SdlApplication()
@@ -79,6 +79,7 @@ int SdlApplication::init(int width, int height)
 		return APP_FAILED;
 	}
 	
+    //Play background music
     SoundManager::Instance()->PlayMusic("DST-Azum.mp3");
     
 	win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);

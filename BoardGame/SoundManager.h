@@ -28,6 +28,6 @@ private:
     
 	static SoundManager* singletonInstance;
     
-    Mix_Chunk *wav;
-    Mix_Music *backMusic;
+    Mix_Chunk *wav = nullptr;
+    Mix_Music *backMusic = nullptr;
 };
