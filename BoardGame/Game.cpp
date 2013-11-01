@@ -548,10 +548,11 @@ void Game::CheckBoard(int posX, int posY)
                     baseTile.tint = false;
 
                     SearchTileCombinationToDestroy();
+                    SearchTileCombinationToDestroy();
                     
                     //redraw board
                     DrawBoard();
-                    
+      
                     SoundManager::Instance()->PlaySound("laser.wav");
                 }
             }
@@ -650,7 +651,10 @@ bool Game::CheckDestroy(Tile tile)
         return true;
     }
     else
+    {
+        SMLog2("destroy tiles");
         return false;
+    }
 }
 
 /**
@@ -828,7 +832,7 @@ TYPE_SQUARE Game::CheckForDifferentType(Tile oldTile)
     
     if (typeRight != -1)
     {
-         if (typeRight == newType)
+         if (typeRight == newType && newType == oldTile.type)
          {
              return CheckForDifferentType(oldTile);
          }
@@ -836,7 +840,7 @@ TYPE_SQUARE Game::CheckForDifferentType(Tile oldTile)
     
     if (typeLeft != -1)
     {
-        if (typeLeft == newType)
+        if (typeLeft == newType && newType == oldTile.type)
         {
             return CheckForDifferentType(oldTile);
         }
@@ -844,7 +848,7 @@ TYPE_SQUARE Game::CheckForDifferentType(Tile oldTile)
     
     if (typeUp != -1)
     {
-        if (typeUp == newType)
+        if (typeUp == newType && newType == oldTile.type)
         {
             return CheckForDifferentType(oldTile);
         }
@@ -852,7 +856,7 @@ TYPE_SQUARE Game::CheckForDifferentType(Tile oldTile)
     
     if (typeDown != -1)
     {
-        if (typeDown == newType)
+        if (typeDown == newType && newType == oldTile.type)
         {
             return CheckForDifferentType(oldTile);
         }

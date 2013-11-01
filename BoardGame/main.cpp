@@ -154,7 +154,7 @@ int SdlApplication::run(int width, int height)
         
         if (1000 / FPS > SDL_GetTicks() - start)
         {
-            SDL_Delay(1000 / FPS - (SDL_GetTicks()-start));
+            SDL_Delay(1000 / FPS - (SDL_GetTicks() - start));
         }
 	}
 	
