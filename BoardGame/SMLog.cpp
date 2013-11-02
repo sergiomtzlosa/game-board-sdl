@@ -7,7 +7,6 @@
 //
 
 #include "SMLog.h"
-#include <SDL2/SDL.h>
 
 void SMLog::Log(bool allowLog, const char *fmt, ...)
 {
