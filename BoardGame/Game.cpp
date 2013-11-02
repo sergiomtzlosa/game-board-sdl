@@ -8,7 +8,6 @@
 
 #include "Game.h"
 #include "Tint.h"
-#include "CAnimation.h"
 
 static string tiles[kMaxTile] = { "Red.png", "Blue.png", "Green.png", "Purple.png", "Yellow.png" };
 
