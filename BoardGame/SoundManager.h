@@ -6,7 +6,22 @@
 //  Copyright (c) 2013 Sergio. All rights reserved.
 //
 
+#ifdef __APPLE__
+
+#import <TargetConditionals.h>
+
+#if TARGET_OS_IPHONE
+
+#include "SDL_mixer.h"
+
+#else
+
 #include <SDL2_Mixer/SDL_mixer.h>
+
+#endif
+
+#endif
+
 #include <string>
 
 using namespace std;

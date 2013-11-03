@@ -9,8 +9,23 @@
 #ifndef __BoardGame__Tint__
 #define __BoardGame__Tint__
 
+#ifdef __APPLE__
+
+#import <TargetConditionals.h>
+
+#if TARGET_OS_IPHONE
+
+#include "SDL.h"
+#include "SDL_image.h"
+
+#else
+
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
+
+#endif
+
+#endif
 
 struct TintValues
 {

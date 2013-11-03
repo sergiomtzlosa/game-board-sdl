@@ -13,12 +13,31 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include "SMLog.h"
+#include "SoundManager.h"
+
+#ifdef __APPLE__
+
+#import <TargetConditionals.h>
+
+#if TARGET_OS_IPHONE
+
+#include "SDL.h"
+#include "SDL_image.h"
+#include "SDL_ttf.h"
+#include "SDL_mixer.h"
+
+#else
+
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_ttf/SDL_ttf.h>
 #include <SDL2_mixer/SDL_mixer.h>
-#include "SMLog.h"
-#include "SoundManager.h"
+
+#endif
+
+#endif
+
 
 #define kTotalRows 8
 
