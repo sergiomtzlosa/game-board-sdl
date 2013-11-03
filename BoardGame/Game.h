@@ -127,7 +127,7 @@ private:
     Tile baseTile;
     Tile swapTile;
     Tile tempSwap, tempBase;
-    int touches = 0;
+    bool touches = false;
     vector<Tile> hCheck;
     vector<Tile> vCheck;
     

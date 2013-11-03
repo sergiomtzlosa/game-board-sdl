@@ -22,6 +22,9 @@ Game::~Game()
 
 Game::Game()
 {
+    //Play background music
+    SoundManager::Instance()->PlayMusic("DST-Azum.mp3");
+    
     InitBoard();
     StartBoard();
     gameOver = false;
@@ -488,10 +491,10 @@ void Game::CheckBoard(int posX, int posY)
     
     if (i != -1 && j != -1)
     {
-        touches++;
-        
-        if (touches == 1)
+        if (!touches)
         {
+            touches = true;
+            
             //first tile to swap
             tempBase = board[i][j];
             baseTile = tempBase;
@@ -500,10 +503,10 @@ void Game::CheckBoard(int posX, int posY)
             
             DrawTileBoard(baseTile);
         }
-        else if (touches == 2)
+        else
         {
             //second tile to swap
-            touches = 0;
+            touches = false;
             
             //check if the user has select a nearby tile
             if (abs(baseTile.rowValue - i) < 2 && abs(baseTile.colValue - j) < 2)
@@ -537,7 +540,7 @@ void Game::CheckBoard(int posX, int posY)
                     swapTile.colValue = tempSwap.colValue;
                     swapTile.tint = false;
                     board[tempSwap.rowValue][tempSwap.colValue] = swapTile;
-                    
+               
                     //invalid swap text
                     ShowInvalidSwapText();
                 }
@@ -546,7 +549,7 @@ void Game::CheckBoard(int posX, int posY)
                     swapTile.tint = false;
                     baseTile.tint = false;
 
-                    SearchTileCombinationToDestroy();
+                    DestroyTiles();
                     SearchTileCombinationToDestroy();
                     
                     //redraw board
@@ -555,8 +558,6 @@ void Game::CheckBoard(int posX, int posY)
                     SoundManager::Instance()->PlaySound("laser.wav");
                 }
             }
-            else
-                touches = 1;
         }
     }
 }
