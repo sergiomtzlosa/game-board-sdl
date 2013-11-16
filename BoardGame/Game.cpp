@@ -569,6 +569,12 @@ void Game::CheckBoard(int posX, int posY)
                     SoundManager::Instance()->PlaySound("laser.wav");
                 }
             }
+            else
+            {
+                tempBase.tint = false;
+                board[tempBase.rowValue][tempBase.colValue] = tempBase;
+                ShowInvalidSwapText();
+            }
         }
     }
 }
