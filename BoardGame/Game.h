@@ -170,12 +170,22 @@ private:
     bool IsPointInRect(int x, int y, int rPointX, int rPointY, int rWidth, int rHeight);
     
     //Inline helper methods
-    static inline string ConvertIntToString(int number)
+    
+    static inline string ConvertIntToString2(int number)
     {
         std::ostringstream ss;
         ss << number;
         
         return ss.str(); //return a string with the contents of the stream
+    }
+    
+    static inline char* ConvertIntToString(int number)
+    {
+        char buffer[100];
+        sprintf(buffer, "%d", number);
+        
+        char *pointer = buffer;
+        return pointer; //return a string with the contents of the stream
     }
     
     static inline bool SortingVectorCols(const Tile& key1, const Tile& key2)

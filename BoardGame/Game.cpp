@@ -9,6 +9,20 @@
 #include "Game.h"
 #include "Tint.h"
 
+#ifdef __APPLE__
+
+#import <TargetConditionals.h>
+
+#if TARGET_OS_IPHONE
+
+#include "UIKitUtils.h"
+
+#endif
+
+#endif
+
+#include <stdio.h>
+
 //Rendering game variables
 static SDL_Renderer *renderer;
 static SDL_Window *win;
@@ -117,9 +131,19 @@ void Game::SetScore(int scoreValue)
     dstRect.x = 120;
     dstRect.y = 110;
     
-    const char *strScore = ConvertIntToString(score).c_str();
+#if TARGET_OS_IPHONE
+    
+    char *strScore = ConvertIntToString(score);
     
     DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
+    
+#else
+    
+    const char *strScore = ConvertIntToString2(score).c_str();
+    
+    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
+    
+#endif
 }
 
 /**
@@ -140,9 +164,19 @@ void Game::SetTime(int timeValue)
     dstRect.x = 120;
     dstRect.y = 195;
     
-    const char *strScore = ConvertIntToString(timeValue).c_str();
+#if TARGET_OS_IPHONE
+    
+    char *strScore = ConvertIntToString(timeValue);
     
     DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
+    
+#else
+    
+    const char *strScore = ConvertIntToString2(timeValue).c_str();
+    
+    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
+    
+#endif
 }
 
 /**
