@@ -9,8 +9,6 @@
 #include "Game.h"
 #include "Tint.h"
 
-static string tiles[kMaxTile] = { "Red.png", "Blue.png", "Green.png", "Purple.png", "Yellow.png" };
-
 static int score = 0;
 
 static int timeout = kTimeCountDown;
@@ -23,7 +21,20 @@ Game::~Game()
 Game::Game()
 {
     //Play background music
-    SoundManager::Instance()->PlayMusic("DST-Azum.mp3");
+    
+#ifdef __APPLE__
+    
+#if TARGET_OS_IPHONE
+    
+    SoundManager::Instance()->PlayMusic("DST-Azum.wav");
+    
+#elif TARGET_OS_MAC
+    
+    SoundManager::Instance()->PlayMusic("DST-Azum.ogg");
+    
+#endif
+    
+#endif
     
     InitBoard();
     StartBoard();
@@ -34,7 +45,7 @@ Game::Game()
  *	Fill board with random values
  */
 void Game::StartBoard()
-{   
+{
     FillBoardArray();
 }
 
@@ -53,7 +64,7 @@ void Game::RenderGame(SDL_Renderer *renderObject, SDL_Window *window)
     SetFixedText();
     SetScore(0);
     SetTime(timeout);
-
+    
     if (startGame)
     {
         SetStopText();
@@ -91,7 +102,7 @@ void Game::SetScore(int scoreValue)
     
     const char *strScore = ConvertIntToString(score).c_str();
     
-    DrawText(strScore, srcRect, dstRect, 32, "SourceSansPro-Regular.ttf");
+    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
 }
 
 /**
@@ -114,7 +125,7 @@ void Game::SetTime(int timeValue)
     
     const char *strScore = ConvertIntToString(timeValue).c_str();
     
-    DrawText(strScore, srcRect, dstRect, 32, "SourceSansPro-Regular.ttf");
+    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
 }
 
 /**
@@ -155,13 +166,13 @@ void Game::SetFixedText()
     dstRect.x = 100;
     dstRect.y = 70;
     
-    DrawText("Score", srcRect, dstRect, 22, "SourceSansPro-Regular.ttf");
-
+    DrawText("Score", srcRect, dstRect, 22, "arial.ttf");
+    
     CRect dstRect2;
     dstRect2.x = 105;
     dstRect2.y = 150;
     
-    DrawText("Time", srcRect, dstRect2, 22, "SourceSansPro-Regular.ttf");
+    DrawText("Time", srcRect, dstRect2, 22, "arial.ttf");
 }
 
 /**
@@ -172,8 +183,7 @@ void Game::SetFixedText()
  */
 void Game::SetBackground(SDL_Window *window, SDL_Renderer *renderer)
 {
-    SDL_Surface *image = nullptr;
-    image = LoadImage("BackGround.jpg");
+    SDL_Surface *image = LoadAssets::Instance()->background;
     
     if (image == NULL)
     {
@@ -191,8 +201,9 @@ void Game::SetBackground(SDL_Window *window, SDL_Renderer *renderer)
     SDL_Rect m_destinationRectangle;
     
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, image);
-    SDL_FreeSurface(image);
+    
     SDL_QueryTexture(texture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
+    SDL_SetRenderTarget(renderer, texture);
     
     m_destinationRectangle.x = m_sourceRectangle.x = 0;
     m_destinationRectangle.y = m_sourceRectangle.y = 0;
@@ -201,6 +212,7 @@ void Game::SetBackground(SDL_Window *window, SDL_Renderer *renderer)
     
     SDL_RenderCopy(renderer, texture, &m_sourceRectangle, &m_destinationRectangle);
     SDL_DestroyTexture(texture);
+    SDL_SetRenderTarget(renderer, NULL);
 }
 
 /**
@@ -243,16 +255,16 @@ void Game::FillBoardArray()
             item.value = tile;
             item.type = (TYPE_SQUARE)tile;
             item.tint = false;
-
+            
             board[row][col] = item;
         }
     }
-
+    
     for (int col = 0; col < kTotalCols; col++)
     {
         for (int row = 0; row < kTotalRows; row++)
         {
-           GetNewValueForBoard(row, col);
+            GetNewValueForBoard(row, col);
         }
     }
 }
@@ -273,10 +285,10 @@ int Game::GetNewValueForBoard(int row, int col)
     
     int backRow = row - 1;
     int backCol = col - 1;
-
+    
     if (backCol >= 0)
     {
-         Tile backTile = board[row][col - 1];
+        Tile backTile = board[row][col - 1];
         
         if (item.type == backTile.type)
         {
@@ -303,7 +315,7 @@ int Game::GetNewValueForBoard(int row, int col)
             return GetNewValueForBoard(row, col);
         }
     }
-
+    
     return type;
 }
 
@@ -333,20 +345,17 @@ void Game::DrawBoard()
  */
 void Game::DrawTileBoard(Tile tile)
 {
-    string tileString = tiles[tile.value];
-
-    if (tileString == "") return;
-    
     SDL_Rect m_sourceRectangle, m_destinationRectangle;
     
-    SDL_Surface *image = LoadImage(tileString);
-
+    SDL_Surface *original = LoadAssets::Instance()->tilesTextures[tile.value];
+    SDL_Surface *image = SDL_CopySurface(original);
+    
     if (image == NULL)
     {
         SDL_Quit();
         exit(1);
     }
-
+    
     if (tile.tint == true)
     {
         TintValues tint = TintValues(105, 105, 105, 1);
@@ -354,6 +363,7 @@ void Game::DrawTileBoard(Tile tile)
     }
     
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, image);
+    SDL_SetRenderTarget(renderer, texture);
     
     SDL_FreeSurface(image);
     SDL_QueryTexture(texture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
@@ -365,9 +375,10 @@ void Game::DrawTileBoard(Tile tile)
     m_destinationRectangle.y = kBaseTilePositionY + (kOffsetPosition * tile.rowValue);
     m_destinationRectangle.w = m_sourceRectangle.w;
     m_destinationRectangle.h = m_sourceRectangle.h;
-
+    
     SDL_RenderCopy(renderer, texture, &m_sourceRectangle, &m_destinationRectangle);
     SDL_DestroyTexture(texture);
+    SDL_SetRenderTarget(renderer, NULL);
 }
 
 /**
@@ -501,7 +512,7 @@ void Game::CheckBoard(int posX, int posY)
             baseTile.tint = true;
             board[i][j] = baseTile;
             
-            DrawTileBoard(baseTile);
+            //            DrawTileBoard(baseTile);
         }
         else
         {
@@ -513,19 +524,19 @@ void Game::CheckBoard(int posX, int posY)
             {
                 tempSwap = board[i][j];
                 swapTile = tempSwap;
-
+                
                 swapTile.rowValue = tempBase.rowValue;
                 swapTile.colValue = tempBase.colValue;
                 swapTile.tint = false;
                 board[tempBase.rowValue][tempBase.colValue] = swapTile;
-
+                
                 baseTile.rowValue = tempSwap.rowValue;
                 baseTile.colValue = tempSwap.colValue;
                 baseTile.tint = false;
                 board[tempSwap.rowValue][tempSwap.colValue] = baseTile;
-
+                
                 //check tiles to destroy
-           
+                
                 bool undoSwap = CheckDestroy(baseTile);
                 
                 //invalid movement
@@ -540,7 +551,7 @@ void Game::CheckBoard(int posX, int posY)
                     swapTile.colValue = tempSwap.colValue;
                     swapTile.tint = false;
                     board[tempSwap.rowValue][tempSwap.colValue] = swapTile;
-               
+                    
                     //invalid swap text
                     ShowInvalidSwapText();
                 }
@@ -548,13 +559,13 @@ void Game::CheckBoard(int posX, int posY)
                 {
                     swapTile.tint = false;
                     baseTile.tint = false;
-
+                    
                     DestroyTiles();
                     SearchTileCombinationToDestroy();
                     
                     //redraw board
                     DrawBoard();
-      
+                    
                     SoundManager::Instance()->PlaySound("laser.wav");
                 }
             }
@@ -587,7 +598,7 @@ bool Game::CheckDestroy(Tile tile)
     while (col >= 0)
     {
         Tile vLeftTile = board[tile.rowValue][col];
-    
+        
         if (vLeftTile.type == tile.type)
         {
             SMLog("left tile - row, col: %d, %d", vLeftTile.rowValue, vLeftTile.colValue);
@@ -672,7 +683,7 @@ void Game::DestroyTiles()
         points += vCheck.size() * kPoints;
         
         std::sort(vCheck.begin(), vCheck.end(), SortingVectorRows);
-
+        
         int len = (int)vCheck.size();
         
         Tile dTile = vCheck.at(0);
@@ -684,7 +695,7 @@ void Game::DestroyTiles()
             int nRow = row + len;
             
             Tile oldTile = board[row][col];
-
+            
             oldTile.rowValue = nRow;
             
             if (row < 0)
@@ -698,12 +709,12 @@ void Game::DestroyTiles()
                 oldTile.type = type;
                 oldTile.tint = false;
             }
-                
+            
             board[nRow][col] = oldTile;
             
             SMLog("nRow, col : %d %d", nRow , col);
         }
-
+        
         vCheck.clear();
     }
     
@@ -714,9 +725,9 @@ void Game::DestroyTiles()
         //get current row from hCheck, loop over the board (in backward from current row) and increase row for all of them, when we are at first row create a new tile for row = 0
         
         std::sort(hCheck.begin(), hCheck.end(), SortingVectorCols);
-
+        
         SMLog("size: %ld", hCheck.size());
-
+        
         for (Tile dTile : hCheck)
         {
             int col = dTile.colValue;
@@ -730,7 +741,7 @@ void Game::DestroyTiles()
                     Tile newTile;
                     newTile.rowValue = 0;
                     newTile.colValue = col;
-
+                    
                     TYPE_SQUARE type = CheckForDifferentType(newTile);
                     
                     newTile.value = (int)type;
@@ -827,15 +838,15 @@ TYPE_SQUARE Game::CheckForDifferentType(Tile oldTile)
         down = board[r + 1][c];
         typeDown = down.type;
     }
-
+    
     SMLog("Type up: %d, down: %d, right: %d, left: %d, newType: %d", typeUp, typeDown, typeRight, typeLeft, newType);
     
     if (typeRight != -1)
     {
-         if (typeRight == newType && newType == oldTile.type)
-         {
-             return CheckForDifferentType(oldTile);
-         }
+        if (typeRight == newType && newType == oldTile.type)
+        {
+            return CheckForDifferentType(oldTile);
+        }
     }
     
     if (typeLeft != -1)
@@ -861,7 +872,7 @@ TYPE_SQUARE Game::CheckForDifferentType(Tile oldTile)
             return CheckForDifferentType(oldTile);
         }
     }
-
+    
     return newType;
 }
 
@@ -891,7 +902,7 @@ void Game::ShowInvalidSwapText()
     dstRect.x = kBaseTilePositionX + 60;
     dstRect.y = 480;
     
-    DrawText("Invalid move!", srcRect, dstRect, 40, "SourceSansPro-Regular.ttf");
+    DrawText("Invalid move!", srcRect, dstRect, 40, "arial.ttf");
 }
 
 /**
@@ -909,8 +920,8 @@ void Game::CreateGameOver()
     CRect dstRect;
     dstRect.x = kBaseTilePositionX + 60;;
     dstRect.y = 150;
-
-    DrawText("Game Over", srcRect, dstRect, 40, "SourceSansPro-Regular.ttf");
+    
+    DrawText("Game Over", srcRect, dstRect, 40, "arial.ttf");
     
     CRect dstRect2;
     dstRect2.x = kBaseTilePositionX + 60;
@@ -920,13 +931,13 @@ void Game::CreateGameOver()
     ss << "Your score is: " << score;
     const char *strScore = ss.str().c_str();
     
-    DrawText(strScore, srcRect, dstRect2, 30, "SourceSansPro-Regular.ttf");
+    DrawText(strScore, srcRect, dstRect2, 30, "arial.ttf");
     
     CRect dstRect3;
     dstRect3.x = kBaseTilePositionX + 50;
     dstRect3.y = 350;
     
-    CRect final = DrawText("Click here to retry", srcRect, dstRect3, 30, "SourceSansPro-Regular.ttf");
+    CRect final = DrawText("Click here to retry", srcRect, dstRect3, 30, "arial.ttf");
     
     retryWidth = final.width;
     retryHeight = final.height;
@@ -959,13 +970,13 @@ bool Game::IsPointInRect(int x, int y, int rPointX, int rPointY, int rWidth, int
 bool Game::CanMakeMoves()
 {
     bool move = true;
-
+    
     for (int col = 0; col < kTotalCols; col++)
     {
         for (int row = 0; row < kTotalRows; row++)
         {
             Tile currentTile = board[row][col];
-
+            
             int upDiagonal = 0;
             int downDiagonal = 0;
             int sameTiles = 0;
@@ -1023,7 +1034,7 @@ bool Game::CanMakeMoves()
                     sameTiles++;
                 }
             }
-           
+            
             if (col + 1 < kTotalCols)
             {
                 Tile right = board[row][col + 1];
@@ -1033,7 +1044,7 @@ bool Game::CanMakeMoves()
                     sameTiles++;
                 }
             }
-           
+            
             if (row - 1 > 0)
             {
                 Tile up = board[row - 1][col];
@@ -1088,13 +1099,13 @@ void Game::SetResetBoardText()
     dstRect.x = kBaseTilePositionX + 40;
     dstRect.y = 150;
     
-    DrawText("No movements left!!!", srcRect, dstRect, 30, "SourceSansPro-Regular.ttf");
-
+    DrawText("No movements left!!!", srcRect, dstRect, 30, "arial.ttf");
+    
     CRect dstRect2;
     dstRect2.x = kBaseTilePositionX + 20;
     dstRect2.y = 280;
-
-    CRect finalRect = DrawText("Click here to reset board", srcRect, dstRect2, 30, "SourceSansPro-Regular.ttf");
+    
+    CRect finalRect = DrawText("Click here to reset board", srcRect, dstRect2, 30, "arial.ttf");
     
     resetBX = finalRect.x;
     resetBY = finalRect.y;
@@ -1116,13 +1127,13 @@ void Game::SetStartText()
     dstRect.x = kBaseTilePositionX + 30;
     dstRect.y = 150;
     
-    DrawText("Gems Game", srcRect, dstRect, 50, "SourceSansPro-Regular.ttf");
-
+    DrawText("Gems Game", srcRect, dstRect, 50, "arial.ttf");
+    
     CRect dstRect2;
     dstRect2.x = kBaseTilePositionX + 20;
     dstRect2.y = 280;
     
-    CRect dstFinal = DrawText("Click here to start", srcRect, dstRect2, 40, "SourceSansPro-Regular.ttf");
+    CRect dstFinal = DrawText("Click here to start", srcRect, dstRect2, 40, "arial.ttf");
     
     startX = dstFinal.x;
     startY = dstFinal.y;
@@ -1145,8 +1156,8 @@ void Game::SetStopText()
     CRect dstRect;
     dstRect.x = 75;
     dstRect.y = 440;
-
-    CRect dstFinal = DrawText("Stop", srcRect, dstRect, 40, "SourceSansPro-Regular.ttf");
+    
+    CRect dstFinal = DrawText("Stop", srcRect, dstRect, 40, "arial.ttf");
     
     stopX = dstFinal.x;
     stopY = dstFinal.y;
@@ -1173,23 +1184,26 @@ CRect Game::DrawText(const char *text, CRect srcRect, CRect dstRect, int fontSiz
     
     if (font == NULL)
     {
-        cerr << "Load SourceSansPro-Regular.ttf Failed: " << TTF_GetError() << endl;
+        cerr << "Load ARIAL.TTF Failed: " << TTF_GetError() << endl;
         TTF_Quit();
         SDL_Quit();
         exit(1);
     }
-        
+    
     SDL_Color foregroundColor = { 255, 255, 255 };
     
     SDL_Surface *textSurface = TTF_RenderText_Solid(font, "", foregroundColor);
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, textSurface);
+    SDL_SetRenderTarget(renderer, texture);
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
     SDL_FreeSurface(textSurface);
     
     textSurface = TTF_RenderText_Solid(font, text, foregroundColor);
     texture = SDL_CreateTextureFromSurface(renderer, textSurface);
+    SDL_SetRenderTarget(renderer, texture);
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
     SDL_FreeSurface(textSurface);
+    SDL_SetRenderTarget(renderer, NULL);
     
     SDL_Rect m_sourceRectangle;
     SDL_Rect m_destinationRectangle;
@@ -1206,9 +1220,10 @@ CRect Game::DrawText(const char *text, CRect srcRect, CRect dstRect, int fontSiz
     m_destinationRectangle.y = dstRect.y;
     m_destinationRectangle.w = srcRect.width;
     m_destinationRectangle.h = srcRect.height;
-  
+    
     SDL_RenderCopy(renderer, texture, &m_sourceRectangle, &m_destinationRectangle);
     SDL_DestroyTexture(texture);
+    SDL_SetRenderTarget(renderer, NULL);
     
     TTF_CloseFont(font);
     TTF_Quit();

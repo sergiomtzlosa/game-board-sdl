@@ -4,8 +4,23 @@
 
 #include "Game.h"
 
+#ifdef __APPLE__
+
+#import <TargetConditionals.h>
+
+#if TARGET_OS_IPHONE
+
+#define WINDOW_WIDTH 480
+#define WINDOW_HEIGHT 640
+
+#elif TARGET_OS_MAC
+
 #define WINDOW_WIDTH 755
 #define WINDOW_HEIGHT 600
+
+#endif
+
+#endif
 
 using namespace std;
 
@@ -41,7 +56,7 @@ struct SdlApplication
 	
 	// Called to render content into buffer.
 	void Render();
-
+    
 	// Whether the application is in event loop.
 	bool _running;
 	SDL_Window *win;
@@ -79,18 +94,45 @@ int SdlApplication::init(int width, int height)
 		return APP_FAILED;
 	}
 	
-	win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
-
-    if (SDL_GetWindowFlags(win) & SDL_WINDOW_OPENGL)
-        SMLog2("using openGL");
+#ifdef __APPLE__
+    
+#if TARGET_OS_IPHONE
+    
+    win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_BORDERLESS | SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_FULLSCREEN);
+    
+#elif TARGET_OS_MAC
+    
+    win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
     
     SDL_Surface *icon = IMG_Load("Red.png");
     SDL_SetWindowIcon(win, icon);
     SDL_FreeSurface(icon);
-                      
-	renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    
+#endif
+    
+#endif
+    
+    if (SDL_GetWindowFlags(win) & SDL_WINDOW_OPENGL)
+        SMLog2("using openGL");
+    
+	renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
 	
-	// Success.
+#ifdef __APPLE__
+    
+#if TARGET_OS_IPHONE
+    
+    UIViewController *controller = UIKitUtils::GetSDLViewController(win);
+    
+    [[GCViewController getInstance] authenticateLocalPlayerWithViewController:controller];
+    
+    ADViewController *adController = [ADViewController instance];
+    
+    UIKitUtils::AddSubView(win, adController.view);
+    
+#endif
+    
+#endif
+    
 	return APP_OK;
 }
 
@@ -135,6 +177,8 @@ int SdlApplication::run(int width, int height)
     const int FPS = 60;
     Uint32 start;
     
+    LoadAssets::Instance();
+    
     newGame = new Game();
     
 	while (SDL_WaitEvent(&ev))
@@ -143,7 +187,7 @@ int SdlApplication::run(int width, int height)
         
 		onEvent(&ev);
 		Render();
-
+        
 		if (_running == false)
 		{
 			break;
@@ -193,7 +237,11 @@ void SdlApplication::Render()
     newGame->RenderGame(renderer, win);
     newGame->SetEvent(&ev);
     newGame->DrawBoard();
-
+    
+    //    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");  // make the scaled rendering look smoother.
+    //    SDL_RenderSetLogicalSize(renderer, 640, 480);
+    //    SDL_RenderSetViewport(renderer
+    //                          , SDL_REC)
     SDL_RenderPresent(renderer);
 }
 

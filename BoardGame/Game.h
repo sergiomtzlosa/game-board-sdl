@@ -15,6 +15,7 @@
 #include <vector>
 #include "SMLog.h"
 #include "SoundManager.h"
+#include "LoadAssets.h"
 
 #ifdef __APPLE__
 
@@ -37,7 +38,6 @@
 #endif
 
 #endif
-
 
 #define kTotalRows 8
 
@@ -86,18 +86,18 @@ using namespace std;
 
 class Game
 {
-   
+    
 public:
     
     void RenderGame(SDL_Renderer *renderObject, SDL_Window *window);
 	void DrawBoard();
     void SetEvent(SDL_Event *ev);
-
+    
     ~Game();
     Game();
     
 private:
-
+    
     //tile board
     Tile board[kTotalRows][kTotalCols];
     
@@ -108,7 +108,7 @@ private:
     
     void SetStartText();
     void SetStopText();
-
+    
     //Rendering game variables
     SDL_Renderer *renderer;
     SDL_Window *win;
@@ -170,21 +170,8 @@ private:
     {
         std::ostringstream ss;
         ss << number;
-
+        
         return ss.str(); //return a string with the contents of the stream
-    }
-    
-    static inline SDL_Surface* LoadImage(std::string fileName)
-    {
-        SDL_Surface *image = IMG_Load(fileName.c_str());
-        
-        if(image == NULL)
-            return NULL;
-        
-        SDL_Surface *optimizedImage = SDL_ConvertSurfaceFormat(image, SDL_PIXELFORMAT_BGRA8888, 0);
-        SDL_FreeSurface(image);
-        
-        return optimizedImage;
     }
     
     static inline bool SortingVectorCols(const Tile& key1, const Tile& key2)
@@ -195,6 +182,11 @@ private:
     static inline bool SortingVectorRows(const Tile& key1, const Tile& key2)
     {
         return key1.rowValue < key2.rowValue;
+    }
+    
+    static inline SDL_Surface* SDL_CopySurface(SDL_Surface* src)
+    {
+        return SDL_ConvertSurface(src, src->format, SDL_SWSURFACE);
     }
 };
 
