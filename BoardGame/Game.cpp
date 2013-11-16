@@ -9,9 +9,26 @@
 #include "Game.h"
 #include "Tint.h"
 
+//Rendering game variables
+static SDL_Renderer *renderer;
+static SDL_Window *win;
+static SDL_Event *event;
+
 static int score = 0;
 
 static int timeout = kTimeCountDown;
+
+Game* Game::pinstance = 0;
+
+Game* Game::Instance()
+{
+    if (pinstance == 0)
+    {
+        pinstance = new Game;
+    }
+    
+    return pinstance;
+}
 
 Game::~Game()
 {
@@ -57,8 +74,8 @@ void Game::StartBoard()
  */
 void Game::RenderGame(SDL_Renderer *renderObject, SDL_Window *window)
 {
-    this->renderer = renderObject;
-    this->win = window;
+    renderer = renderObject;
+    win = window;
     
     SetBackground(win, renderer);
     SetFixedText();
@@ -348,7 +365,7 @@ void Game::DrawTileBoard(Tile tile)
     SDL_Rect m_sourceRectangle, m_destinationRectangle;
     
     SDL_Surface *original = LoadAssets::Instance()->tilesTextures[tile.value];
-    SDL_Surface *image = SDL_CopySurface(original);
+    SDL_Surface *image = SML_CopySurface(original);
     
     if (image == NULL)
     {
@@ -388,7 +405,7 @@ void Game::DrawTileBoard(Tile tile)
  */
 void Game::SetEvent(SDL_Event *ev)
 {
-    this->event = ev;
+    event = ev;
     
     TrackEvent(event);
 }

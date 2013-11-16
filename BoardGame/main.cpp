@@ -10,8 +10,12 @@
 
 #if TARGET_OS_IPHONE
 
+#import "ADViewController.h"
+#import "UIKitUtils.h"
+#import "GCViewController.h"
+
 #define WINDOW_WIDTH 480
-#define WINDOW_HEIGHT 640
+#define WINDOW_HEIGHT 320
 
 #elif TARGET_OS_MAC
 
@@ -121,10 +125,11 @@ int SdlApplication::init(int width, int height)
     
 #if TARGET_OS_IPHONE
     
-    UIViewController *controller = UIKitUtils::GetSDLViewController(win);
-    
-    [[GCViewController getInstance] authenticateLocalPlayerWithViewController:controller];
-    
+    // this causes iphone game goes SLOW!!!!!
+    //    UIViewController *controller = UIKitUtils::GetSDLViewController(win);
+    //
+    //    [[GCViewController getInstance] authenticateLocalPlayerWithViewController:controller];
+    //
     ADViewController *adController = [ADViewController instance];
     
     UIKitUtils::AddSubView(win, adController.view);
@@ -144,12 +149,12 @@ void SdlApplication::destroy()
 {
 	if (win)
 	{
-        SoundManager::Instance()->CleanUp();
-        delete SoundManager::Instance();
-        
-        //destroy game
-        delete newGame;
-        newGame = NULL;
+        //        SoundManager::Instance()->CleanUp();
+        //        delete SoundManager::Instance();
+        //
+        //        //destroy game
+        //        delete newGame;
+        //        newGame = NULL;
         
 		SDL_DestroyWindow(win);
 		SDL_DestroyRenderer(renderer);
@@ -179,7 +184,7 @@ int SdlApplication::run(int width, int height)
     
     LoadAssets::Instance();
     
-    newGame = new Game();
+    newGame = Game::Instance();
     
 	while (SDL_WaitEvent(&ev))
 	{

@@ -89,14 +89,23 @@ class Game
     
 public:
     
+    static Game* Instance();
+    
     void RenderGame(SDL_Renderer *renderObject, SDL_Window *window);
 	void DrawBoard();
     void SetEvent(SDL_Event *ev);
     
     ~Game();
+    
+protected:
+    
     Game();
+    Game(const Game &) ;
+    Game &operator= (const Game &) ;
     
 private:
+    
+    static Game* pinstance;
     
     //tile board
     Tile board[kTotalRows][kTotalCols];
@@ -108,11 +117,6 @@ private:
     
     void SetStartText();
     void SetStopText();
-    
-    //Rendering game variables
-    SDL_Renderer *renderer;
-    SDL_Window *win;
-    SDL_Event *event;
     
     //Timer stuff
     float deltaTime = 0.0;
@@ -184,7 +188,7 @@ private:
         return key1.rowValue < key2.rowValue;
     }
     
-    static inline SDL_Surface* SDL_CopySurface(SDL_Surface* src)
+    static inline SDL_Surface* SML_CopySurface(SDL_Surface* src)
     {
         return SDL_ConvertSurface(src, src->format, SDL_SWSURFACE);
     }
