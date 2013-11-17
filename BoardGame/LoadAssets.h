@@ -19,15 +19,11 @@
 
 #include "SDL.h"
 #include "SDL_image.h"
-#include "SDL_ttf.h"
-#include "SDL_mixer.h"
 
 #else
 
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
-#include <SDL2_ttf/SDL_ttf.h>
-#include <SDL2_mixer/SDL_mixer.h>
 
 #endif
 
@@ -36,6 +32,7 @@
 class LoadAssets
 {
 public:
+    
     static LoadAssets* Instance();
     
     SDL_Surface *tilesTextures[5];
@@ -46,12 +43,17 @@ public:
     SDL_Surface *yellowTile;
     SDL_Surface *background;
     
+    void CleanUp();
+    ~LoadAssets();
+    
 protected:
+    
     LoadAssets();
     LoadAssets(const LoadAssets &) ;
     LoadAssets &operator= (const LoadAssets &) ;
     
 private:
+    
     static LoadAssets* pinstance;
     
     static inline SDL_Surface* LoadImage(std::string fileName)

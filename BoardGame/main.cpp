@@ -97,9 +97,7 @@ int SdlApplication::init(int width, int height)
 		fprintf(stderr, "SDL_Init() failed: %s\n", SDL_GetError());
 		return APP_FAILED;
 	}
-	
-#ifdef __APPLE__
-    
+
 #if TARGET_OS_IPHONE
     
     win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_BORDERLESS | SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_FULLSCREEN);
@@ -113,28 +111,22 @@ int SdlApplication::init(int width, int height)
     SDL_FreeSurface(icon);
     
 #endif
-    
-#endif
-    
+
     if (SDL_GetWindowFlags(win) & SDL_WINDOW_OPENGL)
         SMLog2("using openGL");
     
 	renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
-	
-#ifdef __APPLE__
-    
+	   
 #if TARGET_OS_IPHONE
-    
-    // this causes iphone game goes SLOW!!!!!
-    //    UIViewController *controller = UIKitUtils::GetSDLViewController(win);
-    //
-    //    [[GCViewController getInstance] authenticateLocalPlayerWithViewController:controller];
-    //
-    ADViewController *adController = [ADViewController instance];
-    
-    UIKitUtils::AddSubView(win, adController.view);
-    
-#endif
+
+// this causes iphone game goes SLOW!!!!!
+//    UIViewController *controller = UIKitUtils::GetSDLViewController(win);
+//    
+//    [[GCViewController getInstance] authenticateLocalPlayerWithViewController:controller];
+//    
+//    ADViewController *adController = [ADViewController instance];
+//    
+//    UIKitUtils::AddSubView(win, adController.view);
     
 #endif
     
@@ -149,12 +141,15 @@ void SdlApplication::destroy()
 {
 	if (win)
 	{
-        //        SoundManager::Instance()->CleanUp();
-        //        delete SoundManager::Instance();
-        //
-        //        //destroy game
-        //        delete newGame;
-        //        newGame = NULL;
+        SoundManager::Instance()->CleanUp();
+        delete SoundManager::Instance();
+        
+        LoadAssets::Instance()->CleanUp();
+        delete LoadAssets::Instance();
+        
+        //destroy game
+        delete newGame;
+        newGame = NULL;
         
 		SDL_DestroyWindow(win);
 		SDL_DestroyRenderer(renderer);
@@ -185,7 +180,7 @@ int SdlApplication::run(int width, int height)
     LoadAssets::Instance();
     
     newGame = Game::Instance();
-    
+
 	while (SDL_WaitEvent(&ev))
 	{
         start = SDL_GetTicks();
@@ -243,10 +238,6 @@ void SdlApplication::Render()
     newGame->SetEvent(&ev);
     newGame->DrawBoard();
     
-    //    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");  // make the scaled rendering look smoother.
-    //    SDL_RenderSetLogicalSize(renderer, 640, 480);
-    //    SDL_RenderSetViewport(renderer
-    //                          , SDL_REC)
     SDL_RenderPresent(renderer);
 }
 

@@ -19,7 +19,6 @@
 #include <SDL2_Mixer/SDL_mixer.h>
 
 #endif
-
 #endif
 
 #include <string>
@@ -42,7 +41,17 @@ public:
 private:
     
 	static SoundManager* singletonInstance;
+
+#if TARGET_OS_IPHONE
+
+    Mix_Chunk *wav = NULL;
+    Mix_Music *backMusic = NULL;
+    
+#elif TARGET_OS_MAC
     
     Mix_Chunk *wav = nullptr;
     Mix_Music *backMusic = nullptr;
+    
+#endif
+
 };

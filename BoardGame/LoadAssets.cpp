@@ -22,7 +22,13 @@ LoadAssets* LoadAssets::Instance()
     {
         pinstance = new LoadAssets;
     }
+    
     return pinstance;
+}
+
+LoadAssets::~LoadAssets()
+{
+    
 }
 
 LoadAssets::LoadAssets()
@@ -39,4 +45,20 @@ LoadAssets::LoadAssets()
     tilesTextures[2] = greenTile;
     tilesTextures[3] = purpleTile;
     tilesTextures[4] = yellowTile;
+}
+
+void LoadAssets::CleanUp()
+{
+    SDL_FreeSurface(background);
+    SDL_FreeSurface(redTile);
+    SDL_FreeSurface(blueTile);
+    SDL_FreeSurface(greenTile);
+    SDL_FreeSurface(purpleTile);
+    SDL_FreeSurface(yellowTile);
+    
+    tilesTextures[0] = NULL;
+    tilesTextures[1] = NULL;
+    tilesTextures[2] = NULL;
+    tilesTextures[3] = NULL;
+    tilesTextures[4] = NULL;
 }

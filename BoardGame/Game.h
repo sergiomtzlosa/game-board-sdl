@@ -28,7 +28,7 @@
 #include "SDL_ttf.h"
 #include "SDL_mixer.h"
 
-#else
+#else 
 
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
@@ -94,11 +94,11 @@ public:
     void RenderGame(SDL_Renderer *renderObject, SDL_Window *window);
 	void DrawBoard();
     void SetEvent(SDL_Event *ev);
-    
+
     ~Game();
     
 protected:
-    
+
     Game();
     Game(const Game &) ;
     Game &operator= (const Game &) ;

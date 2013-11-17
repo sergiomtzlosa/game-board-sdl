@@ -26,7 +26,17 @@ SoundManager* SoundManager::Instance()
 }
 
 SoundManager::SoundManager()
-{	
+{
+//    int flags = MIX_INIT_MP3;
+//    int initted = Mix_Init(flags);
+//     
+//    if (initted)
+//    {
+//        printf("Mix_Init: Failed to init required ogg and mod support!\n");
+//        printf("Mix_Init: %s\n", Mix_GetError());
+//        // handle error
+//    }
+
     if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
     {
         SMLog2("audio error");
@@ -40,7 +50,7 @@ SoundManager::~SoundManager()
 
 int SoundManager::PlaySound(const char *file)
 {
-   wav = Mix_LoadWAV(file);
+    wav = Mix_LoadWAV(file);
     
     int channel = Mix_PlayChannel(-1, wav, 0);
     

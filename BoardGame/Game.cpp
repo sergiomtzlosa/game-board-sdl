@@ -52,9 +52,7 @@ Game::~Game()
 Game::Game()
 {
     //Play background music
-    
-#ifdef __APPLE__
-    
+        
 #if TARGET_OS_IPHONE
     
     SoundManager::Instance()->PlayMusic("DST-Azum.wav");
@@ -62,8 +60,6 @@ Game::Game()
 #elif TARGET_OS_MAC
     
     SoundManager::Instance()->PlayMusic("DST-Azum.ogg");
-    
-#endif
     
 #endif
     
@@ -134,7 +130,7 @@ void Game::SetScore(int scoreValue)
 #if TARGET_OS_IPHONE
     
     char *strScore = ConvertIntToString(score);
-    
+
     DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
     
 #else
@@ -563,7 +559,7 @@ void Game::CheckBoard(int posX, int posY)
             baseTile.tint = true;
             board[i][j] = baseTile;
             
-            //            DrawTileBoard(baseTile);
+//            DrawTileBoard(baseTile);
         }
         else
         {
@@ -994,7 +990,7 @@ void Game::CreateGameOver()
     dstRect3.x = kBaseTilePositionX + 50;
     dstRect3.y = 350;
     
-    CRect final = DrawText("Click here to retry", srcRect, dstRect3, 30, "arial.ttf");
+    CRect final = DrawText("(Click here to retry)", srcRect, dstRect3, 30, "arial.ttf");
     
     retryWidth = final.width;
     retryHeight = final.height;
@@ -1277,7 +1273,7 @@ CRect Game::DrawText(const char *text, CRect srcRect, CRect dstRect, int fontSiz
     m_destinationRectangle.y = dstRect.y;
     m_destinationRectangle.w = srcRect.width;
     m_destinationRectangle.h = srcRect.height;
-    
+ 
     SDL_RenderCopy(renderer, texture, &m_sourceRectangle, &m_destinationRectangle);
     SDL_DestroyTexture(texture);
     SDL_SetRenderTarget(renderer, NULL);
