@@ -16,6 +16,7 @@
 #include "SMLog.h"
 #include "SoundManager.h"
 #include "LoadAssets.h"
+#include "SerialData.h"
 
 #ifdef __APPLE__
 
@@ -171,14 +172,8 @@ private:
     
     //Inline helper methods
     
-    static inline string ConvertIntToString2(int number)
-    {
-        std::ostringstream ss;
-        ss << number;
-        
-        return ss.str(); //return a string with the contents of the stream
-    }
-    
+#if TARGET_OS_IPHONE
+
     static inline char* ConvertIntToString(int number)
     {
         char buffer[100];
@@ -187,6 +182,18 @@ private:
         char *pointer = buffer;
         return pointer; //return a string with the contents of the stream
     }
+    
+#elif TARGET_OS_MAC
+    
+    static inline string ConvertIntToString(int number)
+    {
+        std::ostringstream ss;
+        ss << number;
+        
+        return ss.str(); //return a string with the contents of the stream
+    }
+    
+#endif
     
     static inline bool SortingVectorCols(const Tile& key1, const Tile& key2)
     {

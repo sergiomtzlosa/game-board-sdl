@@ -97,6 +97,7 @@ void Game::RenderGame(SDL_Renderer *renderObject, SDL_Window *window)
         SetStopText();
         StartTimer();
         CreateGameOver();
+        SearchTileCombinationToDestroy();
         
         if (!CanMakeMoves())
         {
@@ -129,17 +130,17 @@ void Game::SetScore(int scoreValue)
     
 #if TARGET_OS_IPHONE
     
-    char *strScore = ConvertIntToString(score);
+    const char *strScore = ConvertIntToString(score);
+    
+#elif TARGET_OS_MAC
+    
+    const char *strScore = ConvertIntToString(score).c_str();
 
-    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
-    
-#else
-    
-    const char *strScore = ConvertIntToString2(score).c_str();
-    
-    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
-    
 #endif
+    
+    
+    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
+    
 }
 
 /**
@@ -162,17 +163,15 @@ void Game::SetTime(int timeValue)
     
 #if TARGET_OS_IPHONE
     
-    char *strScore = ConvertIntToString(timeValue);
+    const char *strScore = ConvertIntToString(timeValue);
     
-    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
+#elif TARGET_OS_MAC
     
-#else
-    
-    const char *strScore = ConvertIntToString2(timeValue).c_str();
-    
-    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
-    
+    const char *strScore = ConvertIntToString(timeValue).c_str();
+
 #endif
+    
+    DrawText(strScore, srcRect, dstRect, 32, "arial.ttf");
 }
 
 /**
@@ -980,11 +979,20 @@ void Game::CreateGameOver()
     dstRect2.x = kBaseTilePositionX + 60;
     dstRect2.y = 250;
     
-    std::stringstream ss;
-    ss << "Your score is: " << score;
-    const char *strScore = ss.str().c_str();
+#if TARGET_OS_IPHONE
     
-    DrawText(strScore, srcRect, dstRect2, 30, "arial.ttf");
+    const char *strScore = ConvertIntToString(score);
+    
+#elif TARGET_OS_MAC
+    
+    const char *strScore = ConvertIntToString(score).c_str();
+    
+#endif
+    
+    const char *literal = "Your score is: ";
+    string total = string(literal) + string(strScore);
+
+    DrawText(total.c_str(), srcRect, dstRect2, 30, "arial.ttf");
     
     CRect dstRect3;
     dstRect3.x = kBaseTilePositionX + 50;

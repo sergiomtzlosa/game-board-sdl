@@ -100,25 +100,28 @@ int SdlApplication::init(int width, int height)
 
 #if TARGET_OS_IPHONE
     
-    win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_BORDERLESS | SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_FULLSCREEN);
+    win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_BORDERLESS | SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_FULLSCREEN);
     
 #elif TARGET_OS_MAC
     
-    win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+    win = SDL_CreateWindow(APPTITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN);
     
     SDL_Surface *icon = IMG_Load("Red.png");
     SDL_SetWindowIcon(win, icon);
     SDL_FreeSurface(icon);
     
+    
 #endif
-
+    
     if (SDL_GetWindowFlags(win) & SDL_WINDOW_OPENGL)
+    {
         SMLog2("using openGL");
+    }
     
 	renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
 	   
-#if TARGET_OS_IPHONE
-
+//#if TARGET_OS_IPHONE
+//
 // this causes iphone game goes SLOW!!!!!
 //    UIViewController *controller = UIKitUtils::GetSDLViewController(win);
 //    
@@ -127,8 +130,8 @@ int SdlApplication::init(int width, int height)
 //    ADViewController *adController = [ADViewController instance];
 //    
 //    UIKitUtils::AddSubView(win, adController.view);
-    
-#endif
+//    
+//#endif
     
 	return APP_OK;
 }
