@@ -16,7 +16,6 @@
 #include "SMLog.h"
 #include "SoundManager.h"
 #include "LoadAssets.h"
-#include "SerialData.h"
 
 #ifdef __APPLE__
 
